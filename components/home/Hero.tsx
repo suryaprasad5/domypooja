@@ -48,11 +48,12 @@ export default function Hero() {
 
       {/* LEFT — content */}
       <div style={{ 
-        padding: '40px 5% 60px 8%', // 🔥 reduced top padding (was 60)
-        position: 'relative', 
-        zIndex: 2, 
-        animation: 'fadeUp 0.9s ease both' 
-      }}>
+		padding: '40px 5% 60px 8%',
+		position: 'relative', 
+		zIndex: 2, 
+		transform: 'translateY(-30px)', // 🔥 move up
+		animation: 'fadeUp 0.9s ease both' 
+		}}>
 
         <div style={{
           display: 'inline-flex', alignItems: 'center', gap: 10,
@@ -137,11 +138,12 @@ export default function Hero() {
 
       {/* RIGHT */}
       <div style={{
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        padding: '40px 6% 40px 2%',
-        position: 'relative', zIndex: 2,
-        animation: 'fadeUp 1s 0.2s ease both',
-      }}>
+		display: 'flex', alignItems: 'center', justifyContent: 'center',
+		padding: '40px 6% 40px 2%',
+		position: 'relative', zIndex: 2,
+		transform: 'translateY(-40px)', // 🔥 slightly more for visual balance
+		animation: 'fadeUp 1s 0.2s ease both',
+		}}>
         <YagnaKunda />
       </div>
 
