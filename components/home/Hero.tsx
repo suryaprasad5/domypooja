@@ -30,8 +30,8 @@ export default function Hero() {
 
   return (
     <section style={{
-      height: '100vh', // keep fixed screen
-      paddingTop: 20, // 🔥 reduced more
+      minHeight: '100vh',
+      paddingTop: 56, // 🔥 slightly reduced (was 72)
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
       alignItems: 'center',
@@ -40,103 +40,96 @@ export default function Hero() {
       overflow: 'hidden',
     }} className="hero-section">
 
-      {/* BG */}
+      {/* BG gradients */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        background:
-          'radial-gradient(ellipse 70% 80% at 15% 50%, rgba(249,115,22,0.07) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 80% 80%, rgba(15,118,110,0.07) 0%, transparent 60%)',
+        background: 'radial-gradient(ellipse 70% 80% at 15% 50%, rgba(249,115,22,0.07) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 80% 80%, rgba(15,118,110,0.07) 0%, transparent 60%)',
       }} />
 
-      {/* LEFT */}
-      <div style={{
-        padding: '10px 5% 20px 8%', // 🔥 drastically reduced
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        gap: 12, // 🔥 tighter spacing
-        zIndex: 2,
+      {/* LEFT — content */}
+      <div style={{ 
+        padding: '40px 5% 60px 8%', // 🔥 reduced top padding (was 60)
+        position: 'relative', 
+        zIndex: 2, 
+        animation: 'fadeUp 0.9s ease both' 
       }}>
 
-        {/* Badge */}
         <div style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 8,
-          padding: '6px 14px',
-          fontSize: '0.7rem',
-          marginBottom: 4,
-          borderRadius: 999,
-          background: 'rgba(249,115,22,0.1)',
-          border: '1px solid rgba(249,115,22,0.25)',
-          color: 'var(--saffron-deep)',
+          display: 'inline-flex', alignItems: 'center', gap: 10,
+          background: 'rgba(249,115,22,0.1)', border: '1px solid rgba(249,115,22,0.25)',
+          color: 'var(--saffron-deep)', padding: '7px 18px', borderRadius: '999px',
+          fontSize: '0.78rem', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase',
+          marginBottom: 26,
         }}>
-          <span>ॐ</span>
+          <span style={{ fontFamily: 'var(--font-devan)', fontSize: '1.1rem' }}>ॐ</span>
           India's Most Trusted Pooja Platform
         </div>
 
-        {/* Heading */}
         <h1 style={{
-          fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', // 🔥 reduced
-          lineHeight: 1.1,
-          margin: 0,
+          fontFamily: 'var(--font-display)',
+          fontSize: 'clamp(2.6rem, 4.5vw, 4.2rem)',
+          fontWeight: 700, lineHeight: 1.1,
+          color: 'var(--text-dark)', letterSpacing: '-0.5px',
+          marginBottom: 22,
         }}>
-          Book <em style={{ color: 'var(--saffron)' }}>Verified Pandits</em>
-          <br />
-          for <span style={{ color: 'var(--teal)' }}>Sacred Ceremonies</span>
+          Book{' '}
+          <em style={{ fontStyle: 'italic', color: 'var(--saffron)' }}>Verified Pandits</em>
+          <br />for{' '}
+          <span style={{ color: 'var(--teal)', fontStyle: 'normal' }}>Sacred Ceremonies</span>
         </h1>
 
-        {/* Description */}
-        <p style={{
-          fontSize: '0.95rem',
-          lineHeight: 1.6,
-          margin: 0,
-          maxWidth: 460,
+        <p style={{ 
+          fontSize: '1.05rem', 
+          color: 'var(--text-muted)', 
+          lineHeight: 1.75, 
+          maxWidth: 480, 
+          marginBottom: 38 
         }}>
-          Authentic Vedic rituals performed by experienced, verified Pandits and Purohits — with complete puja samagri delivered to your doorstep.
+          Authentic Vedic rituals performed by experienced, verified Pandits and Purohits — with complete puja samagri delivered to your doorstep. Available across 30+ cities.
         </p>
 
-        {/* Search */}
+        {/* Search box */}
         <div style={{
-          display: 'flex',
-          gap: 6,
-          padding: 6,
-          borderRadius: 14,
-          maxWidth: 480,
-          marginTop: 6,
+          background: 'white', borderRadius: 18, padding: 8,
+          display: 'flex', gap: 8,
+          boxShadow: '0 8px 40px rgba(0,0,0,0.1)',
+          border: '1px solid var(--border-warm)',
+          maxWidth: 540, marginBottom: 44,
         }}>
-          <select value={puja} onChange={e => setPuja(e.target.value)} style={{ flex: 1, padding: 8 }}>
-            <option value="">Select Puja</option>
+          <select value={puja} onChange={e => setPuja(e.target.value)} style={{
+            flex: 1, padding: '11px 14px', border: 'none',
+            background: 'var(--ivory-warm)', borderRadius: 10,
+            fontSize: '0.88rem',
+          }}>
+            <option value="">🙏 Select a Puja</option>
             {PUJAS.map(p => <option key={p}>{p}</option>)}
           </select>
 
-          <select value={city} onChange={e => setCity(e.target.value)} style={{ flex: 1, padding: 8 }}>
-            <option value="">City</option>
+          <select value={city} onChange={e => setCity(e.target.value)} style={{
+            flex: 1, padding: '11px 14px', border: 'none',
+            background: 'var(--ivory-warm)', borderRadius: 10,
+            fontSize: '0.88rem',
+          }}>
+            <option value="">📍 Select City</option>
             {CITIES.map(c => <option key={c}>{c}</option>)}
           </select>
 
           <button onClick={handleBook} style={{
-            padding: '8px 16px',
-            fontSize: '0.8rem',
+            background: 'linear-gradient(135deg, var(--saffron), var(--saffron-deep))',
+            color: 'white', border: 'none', padding: '12px 28px',
+            borderRadius: 14, fontSize: '0.9rem',
+            fontWeight: 700, cursor: 'pointer',
           }}>
-            Book
+            Book Now ✦
           </button>
         </div>
 
         {/* Stats */}
-        <div style={{
-          display: 'flex',
-          gap: 20,
-          flexWrap: 'wrap',
-          marginTop: 8,
-        }}>
+        <div style={{ display: 'flex', gap: 36, flexWrap: 'wrap' }}>
           {STATS.map(s => (
             <div key={s.label}>
-              <div style={{ fontSize: '1.6rem', color: 'var(--saffron)' }}>
-                {s.num}
-              </div>
-              <div style={{ fontSize: '0.65rem' }}>
-                {s.label}
-              </div>
+              <div style={{ fontSize: '2.1rem', fontWeight: 700, color: 'var(--saffron)' }}>{s.num}</div>
+              <div style={{ fontSize: '0.72rem', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>
@@ -144,18 +137,23 @@ export default function Hero() {
 
       {/* RIGHT */}
       <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        padding: '40px 6% 40px 2%',
+        position: 'relative', zIndex: 2,
+        animation: 'fadeUp 1s 0.2s ease both',
       }}>
-        <div style={{ transform: 'scale(0.78)' }}> {/* 🔥 shrink image */}
-          <YagnaKunda />
-        </div>
+        <YagnaKunda />
       </div>
 
       <style>{`
+        @keyframes fadeUp { 
+          from { opacity:0; transform:translateY(24px) } 
+          to   { opacity:1; transform:translateY(0) } 
+        }
+
         @media (max-width: 900px) {
-          .hero-section { grid-template-columns: 1fr !important; height:auto; }
+          .hero-section { grid-template-columns: 1fr !important; }
+          .hero-visual { display: none !important; }
         }
       `}</style>
     </section>
