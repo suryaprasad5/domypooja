@@ -5,7 +5,7 @@ export default function YagnaKunda() {
   return (
     <div style={{
       position: 'relative',
-      width: 720, height: 720,
+      width: 840, height: 840,
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       flexShrink: 0,
     }}>
@@ -38,15 +38,15 @@ export default function YagnaKunda() {
       {/* The kunda image — no rotation, clean display */}
       <div style={{
         position: 'relative',
-        width: 720, height: 720,
+        width: 840, height: 840,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         filter: 'drop-shadow(0 16px 40px rgba(192,57,43,0.3)) drop-shadow(0 0 20px rgba(249,115,22,0.2))',
       }}>
         <Image
           src="/images/yagna-kunda.png"
           alt="Yagna Kunda with sacred fire"
-          width={720}
-          height={720}
+          width={840}
+          height={840}
           style={{ objectFit: 'contain' }}
           priority
         />
@@ -80,7 +80,7 @@ function PetalRing() {
   return (
     <div style={{
       position: 'absolute',
-      width: 720, height: 720,
+      width: 840, height: 840,
       top: '50%', left: '50%',
       transform: 'translate(-50%,-50%)',
       animation: 'ringCCW 30s linear infinite',
