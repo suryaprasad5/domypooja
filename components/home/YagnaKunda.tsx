@@ -45,8 +45,8 @@ export default function YagnaKunda() {
         <Image
           src="/images/yagna-kunda.png"
           alt="Yagna Kunda with sacred fire"
-          width={340}
-          height={340}
+          width={540}
+          height={540}
           style={{ objectFit: 'contain' }}
           priority
         />
