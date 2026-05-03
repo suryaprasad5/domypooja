@@ -5,7 +5,7 @@ export default function YagnaKunda() {
   return (
     <div style={{
       position: 'relative',
-      width: 470, height: 470,
+      width: 1040, height: 1040,
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       flexShrink: 0,
     }}>
@@ -38,7 +38,7 @@ export default function YagnaKunda() {
       {/* The kunda image — no rotation, clean display */}
       <div style={{
         position: 'relative',
-        width: 340, height: 340,
+        width: 1040, height: 1040,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         filter: 'drop-shadow(0 16px 40px rgba(192,57,43,0.3)) drop-shadow(0 0 20px rgba(249,115,22,0.2))',
       }}>
@@ -80,7 +80,7 @@ function PetalRing() {
   return (
     <div style={{
       position: 'absolute',
-      width: 470, height: 470,
+      width: 1040, height: 1040,
       top: '50%', left: '50%',
       transform: 'translate(-50%,-50%)',
       animation: 'ringCCW 30s linear infinite',
