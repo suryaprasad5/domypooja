@@ -14,7 +14,7 @@ export default function YagnaKunda() {
     }}>
 
       {/* Decorative rings */}
-      {[470, 418, 366].map((size, i) => (
+      {[820, 740, 660].map((size, i) => (
         <div key={size} style={{
           position: 'absolute',
           width: size,
@@ -33,10 +33,10 @@ export default function YagnaKunda() {
       {/* Ground glow */}
       <div style={{
         position: 'absolute',
-        bottom: 40,
+        bottom: 120,
         left: '50%',
         transform: 'translateX(-50%)',
-        width: 200,
+        width: 300,
         height: 32,
         background: 'radial-gradient(ellipse, rgba(230,126,34,0.35) 0%, transparent 70%)',
         borderRadius: '50%',
