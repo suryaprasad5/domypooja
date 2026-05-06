@@ -73,9 +73,9 @@ export default function Hero() {
         }} />
 
         {/* Image at top on mobile */}
-        <div style={{ display:'flex', justifyContent:'center', padding:'20px 0 0',
+        <div style={{ display:'flex', justifyContent:'center', padding:'16px 0 0',
           position:'relative', zIndex:2 }}>
-          <div style={{ width:'72vw', height:'72vw', maxWidth:320, maxHeight:320 }}>
+          <div style={{ width:'88vw', height:'88vw', maxWidth:400, maxHeight:400 }}>
             <YagnaKunda />
           </div>
         </div>

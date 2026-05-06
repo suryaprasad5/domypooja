@@ -68,6 +68,7 @@ export default function Navbar() {
       {/* CTA group */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0 }}>
         <a href="https://wa.me/919036050108" target="_blank" rel="noreferrer"
+          className="nav-wa-btn"
           style={{
             display: 'flex', alignItems: 'center', gap: '6px',
             background: '#E7F9EF', color: '#15803D',
@@ -75,6 +76,7 @@ export default function Navbar() {
             fontSize: '0.82rem', fontWeight: 600, textDecoration: 'none',
           }}>💬 WhatsApp</a>
         <Link href="/puja-services"
+          className="nav-book-btn"
           style={{
             background: 'linear-gradient(135deg, var(--saffron), var(--saffron-deep))',
             color: 'white', padding: '9px 22px', borderRadius: '999px',
@@ -112,9 +114,16 @@ export default function Navbar() {
       )}
 
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 767px) {
           .nav-links-desktop { display: none !important; }
           .nav-hamburger { display: flex !important; }
+          .nav-book-btn { display: none !important; }
+          .nav-wa-btn   { display: none !important; }
+        }
+        @media (min-width: 768px) and (max-width: 900px) {
+          .nav-links-desktop { display: none !important; }
+          .nav-hamburger { display: flex !important; }
+          .nav-book-btn { display: none !important; }
         }
       `}</style>
     </nav>
