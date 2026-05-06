@@ -74,8 +74,11 @@ export default function Hero() {
 
         {/* Image at top on mobile */}
         <div style={{ display:'flex', justifyContent:'center', padding:'16px 0 0',
-          position:'relative', zIndex:2 }}>
-          <div style={{ width:'88vw', height:'88vw', maxWidth:400, maxHeight:400 }}>
+          position:'relative', zIndex:2, overflow:'hidden' }}>
+          <div style={{
+            width:'88vw', height:'88vw', maxWidth:380, maxHeight:380,
+            overflow:'hidden',  /* clips the rings so they don't create blank space */
+          }}>
             <YagnaKunda />
           </div>
         </div>

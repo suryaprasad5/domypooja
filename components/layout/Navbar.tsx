@@ -74,7 +74,7 @@ export default function Navbar() {
             background: '#E7F9EF', color: '#15803D',
             padding: '8px 16px', borderRadius: '999px',
             fontSize: '0.82rem', fontWeight: 600, textDecoration: 'none',
-          }}>💬 WhatsApp</a>
+          }}>💬 <span className="wa-label">WhatsApp</span></a>
         <Link href="/puja-services"
           className="nav-book-btn"
           style={{
@@ -118,7 +118,8 @@ export default function Navbar() {
           .nav-links-desktop { display: none !important; }
           .nav-hamburger { display: flex !important; }
           .nav-book-btn { display: none !important; }
-          .nav-wa-btn   { display: none !important; }
+          .nav-wa-btn span.wa-label { display: none !important; }
+          .nav-wa-btn { padding: 8px 10px !important; }
         }
         @media (min-width: 768px) and (max-width: 900px) {
           .nav-links-desktop { display: none !important; }
