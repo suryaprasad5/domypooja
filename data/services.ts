@@ -170,7 +170,9 @@ export const SERVICES: PujaService[] = [
   // OTHER
   { id:'horoscope',  name:'Horoscope Report (Softcopy)',         emoji:'🔮', price:'₹299 – ₹599',    category:'other' },
   { id:'samuhika',   name:'Samuhika Lakshmi Sahasranama Archane',emoji:'🌸', price:'₹1,501 – ₹2,501', category:'other' },
+  { id:'office-subscription', name:'Subscribe for Office Pooja', emoji:'🏢', price:'Monthly Plans Available', category:'other', badge:'popular', description:'Monthly subscription for regular Office/Business Poojas — Ganesh Pooja, Lakshmi Pooja and seasonal festivals performed by our Purohits at your workplace on a scheduled basis.' },
 ]
 
 export const POPULAR = SERVICES.filter(s => s.badge === 'popular').slice(0, 8)
 export const SAMSKARAS = SERVICES.filter(s => s.isSamskara)
+

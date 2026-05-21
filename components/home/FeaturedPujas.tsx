@@ -13,7 +13,7 @@ export default function FeaturedPujas() {
         <div style={{ display:'inline-flex',alignItems:'center',gap:8,fontSize:'0.72rem',fontWeight:700,letterSpacing:'2.5px',textTransform:'uppercase',color:'var(--saffron)',marginBottom:14 }}>✦ Most Booked ✦</div>
         <h2 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(1.9rem,3.5vw,3rem)',fontWeight:700,color:'var(--text-dark)' }}>Featured Puja Services</h2>
         <div style={{ width:60,height:3,background:'linear-gradient(90deg,var(--saffron),#F59E0B)',borderRadius:2,margin:'20px auto' }} />
-        <p style={{ fontSize:'1.05rem',color:'var(--text-muted)',maxWidth:540,margin:'0 auto' }}>Authentic Vedic ceremonies performed by verified Pandits. Complete puja samagri included in all packages.</p>
+        <p style={{ fontSize:'1.05rem',color:'var(--text-muted)',maxWidth:540,margin:'0 auto' }}>Authentic Vedic ceremonies performed by verified Purohits/Purohit/Pandits. Saamagri arranged if opted (incl. Alankara/Decoration).</p>
       </div>
       <div style={{ display:'flex',flexWrap:'wrap',gap:10,justifyContent:'center',marginBottom:52 }}>
         {TABS.map((t,i) => (
@@ -49,7 +49,7 @@ export default function FeaturedPujas() {
       </div>
       <div style={{ textAlign:'center',marginTop:52 }}>
         <Link href="/puja-services" style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'16px 38px',borderRadius:'999px',background:'linear-gradient(135deg,var(--saffron),var(--saffron-deep,#C2540A))',color:'white',fontWeight:600,fontSize:'1rem',textDecoration:'none',boxShadow:'0 6px 22px rgba(249,115,22,0.35)' }}>
-          View All 118+ Puja Services →
+          View All 118+ Pooja Services →
         </Link>
       </div>
       <style>{`.puja-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(249,115,22,0.18);border-color:var(--border-warm)!important}`}</style>

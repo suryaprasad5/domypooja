@@ -82,7 +82,7 @@ export default function Navbar() {
             color: 'white', padding: '9px 22px', borderRadius: '999px',
             fontSize: '0.875rem', fontWeight: 600, textDecoration: 'none',
             boxShadow: '0 4px 14px rgba(249,115,22,0.35)',
-          }}>Book a Pandit →</Link>
+          }}>Book a Purohit/Pandit →</Link>
       </div>
 
       {/* Hamburger */}

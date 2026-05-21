@@ -3,10 +3,10 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const FAQS = [
-  { q:'How quickly can I book a Pandit?', a:'For most cities, we can arrange a Pandit within 24–48 hours. For popular dates and major festivals, we recommend booking 7–10 days in advance.' },
+  { q:'How quickly can I book a Purohit/Pandit?', a:'For most cities, we can arrange a Purohit/Pandit within 24–48 hours. For popular dates and major festivals, we recommend booking 7–10 days in advance.' },
   { q:'Is the puja samagri included in the price?', a:'Yes! All our packages include complete puja samagri delivered to your home before the ceremony. You need not source or arrange anything.' },
-  { q:'Can I request a Pandit from my community?', a:'Absolutely. We have Pandits from virtually all Hindu traditions — North Indian, South Indian, Bengali, Gujarati, Marathi and more. Specify your preference when booking.' },
-  { q:'How do I register as a Pandit on DoMyPooja?', a:'Fill out the contact form, select "Pandit Registration," and our team will contact you within 24 hours with the process and verification requirements.' },
+  { q:'Can I request a Purohit/Pandit from my community?', a:'Absolutely. We have Purohits/Purohit/Pandits from virtually all Hindu traditions — North Indian, South Indian, Bengali, Gujarati, Marathi and more. Specify your preference when booking.' },
+  { q:'How do I register as a Purohit/Pandit on DoMyPooja?', a:'Fill out the contact form, select "Purohit/Purohit/Pandit Registration," and our team will contact you within 24 hours with the process and verification requirements.' },
   { q:'What is the refund policy if I cancel?', a:'We offer a 100% refund for cancellations made 48+ hours before the ceremony. For later cancellations, we provide free rescheduling.' },
 ]
 
@@ -38,7 +38,7 @@ export default function ContactPage() {
         </div>
         <div style={{ display:'inline-flex',alignItems:'center',gap:8,fontSize:'0.72rem',fontWeight:700,letterSpacing:'2.5px',textTransform:'uppercase',color:'#FDE68A',marginBottom:14 }}>✦ We&apos;re Here to Help ✦</div>
         <h1 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(2.4rem,4.5vw,3.8rem)',fontWeight:700,color:'white',marginBottom:16 }}>Contact DoMyPooja</h1>
-        <p style={{ fontSize:'1.05rem',color:'rgba(255,255,255,0.65)',maxWidth:540,margin:'0 auto 28px' }}>Have a question? Need help choosing a puja? Want to register as a Pandit? We&apos;re available 7 days a week.</p>
+        <p style={{ fontSize:'1.05rem',color:'rgba(255,255,255,0.65)',maxWidth:540,margin:'0 auto 28px' }}>Have a question? Need help choosing a puja? Want to register as a Purohit/Pandit? We&apos;re available 7 days a week.</p>
         <div style={{ display:'flex',alignItems:'center',gap:8,justifyContent:'center',fontSize:'0.8rem',color:'rgba(255,255,255,0.5)' }}>
           <Link href="/" style={{ color:'rgba(255,255,255,0.6)',textDecoration:'none' }}>Home</Link><span>/</span><span>Contact Us</span>
         </div>
@@ -74,14 +74,14 @@ export default function ContactPage() {
                   <label style={{ display:'block',fontSize:'0.78rem',fontWeight:700,color:'var(--text-faint)',textTransform:'uppercase',letterSpacing:'0.8px',marginBottom:7 }}>Puja / Service</label>
                   <select value={form.service} onChange={e=>setForm({...form,service:e.target.value})} style={{...inp,cursor:'pointer'}}>
                     <option value="">Select a service</option>
-                    {['Griha Pravesh Puja','Satyanarayan Puja','Maha Ganapati Homa','E-Puja Online','General Inquiry','Pandit Registration','Other'].map(s=><option key={s}>{s}</option>)}
+                    {['Griha Pravesh Puja','Satyanarayan Puja','Maha Ganapati Homa','E-Puja Online','General Inquiry','Purohit/Purohit/Pandit Registration','Other'].map(s=><option key={s}>{s}</option>)}
                   </select>
                 </div>
                 <div>
                   <label style={{ display:'block',fontSize:'0.78rem',fontWeight:700,color:'var(--text-faint)',textTransform:'uppercase',letterSpacing:'0.8px',marginBottom:7 }}>Your City</label>
                   <select value={form.city} onChange={e=>setForm({...form,city:e.target.value})} style={{...inp,cursor:'pointer'}}>
                     <option value="">Select city</option>
-                    {['Bangalore','Mumbai','Delhi NCR','Hyderabad','Chennai','Pune','Abroad (NRI)','Other'].map(c=><option key={c}>{c}</option>)}
+                    {['Bengaluru','Mumbai','Delhi NCR','Hyderabad','Chennai','Pune','Abroad (NRI)','Other'].map(c=><option key={c}>{c}</option>)}
                   </select>
                 </div>
               </div>

@@ -69,7 +69,7 @@ export default function PujaDetailClient({
               {[
                 ['⏱️', detail?.duration || '2–4 hours'],
                 ['📍', 'At your home'],
-                ['🗣️', 'Kannada · Hindi & more'],
+                ['🗣️', 'Kannada · Telugu · Hindi · English'],
                 ['📦', 'Samagri included'],
                 ['⭐', '4.9★ (2,400+ reviews)'],
               ].map(([icon, label]) => (
@@ -115,7 +115,7 @@ export default function PujaDetailClient({
               <div>
                 <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: 'var(--text-dark)', marginBottom: 12 }}>About This Puja</h2>
                 <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', lineHeight: 1.8, marginBottom: 22 }}>
-                  {puja.description || `${puja.name} is a sacred Vedic ceremony performed with devotion and as per ancient scriptural injunctions. Our verified Kannada Pandits ensure the ceremony is conducted exactly as per your community and regional traditions, with all puja samagri arranged and delivered by DoMyPooja.`}
+                  {puja.description || `${puja.name} is a sacred Vedic ceremony performed with devotion and as per ancient scriptural injunctions. Our verified Purohits/Purohits/Purohits/Purohit/Pandits ensure the ceremony is conducted exactly as per your community and regional traditions, with all puja samagri arranged and delivered by DoMyPooja.`}
                 </p>
 
                 {detail?.keyInsights && (
@@ -150,7 +150,7 @@ export default function PujaDetailClient({
                   <>
                     <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', color: 'var(--text-dark)', marginBottom: 12 }}>Benefits & Significance</h2>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 28 }}>
-                      {['Removes negative energies and purifies the space or occasion.', 'Invokes divine blessings for protection, prosperity and wellbeing.', 'Performed on an auspicious muhurat for maximum spiritual benefit.', 'Conducted exactly as per your community and regional traditions.', 'All samagri sourced and delivered to your doorstep.'].map((b, i) => (
+                      {['Removes negative energies and purifies the space or occasion.', 'Invokes divine blessings for protection, prosperity and wellbeing.', 'Performed on an auspicious muhurat for maximum spiritual benefit.', 'Conducted exactly as per your community and regional traditions.', 'Saamagri (including Alankara/Decoration) arranged if opted — exact pricing shared based on requirements.'].map((b, i) => (
                         <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
                           <span style={{ color: 'var(--saffron)', flexShrink: 0, marginTop: 2 }}>✦</span>{b}
                         </div>
@@ -163,7 +163,7 @@ export default function PujaDetailClient({
                 <div style={{ background: 'linear-gradient(135deg,rgba(15,118,110,0.06),rgba(249,115,22,0.04))', border: '1px solid rgba(15,118,110,0.15)', borderRadius: 14, padding: '20px 22px' }}>
                   <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-faint)', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: 12 }}>Everything arranged by DoMyPooja</div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-                    {['Verified & experienced Pandit / Purohit', 'Complete puja samagri delivered', 'Advance booking confirmation & reminder', 'Ceremony per your community traditions', 'Prasad distribution guidance', '24/7 support via WhatsApp & phone'].map(item => (
+                    {['Verified & experienced Purohit/Purohit/Pandit', 'Saamagri arranged if opted (incl. Alankara)', 'Advance booking confirmation & reminder', 'Ceremony per your community traditions', 'Prasad distribution guidance', '24/7 support via phone & in person'].map(item => (
                       <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.82rem', color: 'var(--text-body)' }}>
                         <span style={{ color: '#0F766E', fontWeight: 700, flexShrink: 0 }}>✓</span>{item}
                       </div>
@@ -178,7 +178,7 @@ export default function PujaDetailClient({
               <div>
                 <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: 'var(--text-dark)', marginBottom: 8 }}>Puja Packages</h2>
                 <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: 28 }}>
-                  All packages include a verified Pandit, complete puja samagri delivered to your home, and end-to-end support. Choose based on the scale and depth of ceremony you need.
+                  All packages include a verified Purohit/Pandit, complete puja samagri delivered to your home, and end-to-end support. Choose based on the scale and depth of ceremony you need.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                   {detail.packages.map((pkg, i) => (
@@ -200,7 +200,7 @@ export default function PujaDetailClient({
                           </div>
                           <div style={{ display: 'flex', gap: 16, fontSize: '0.8rem', color: 'var(--text-faint)' }}>
                             <span>⏱️ {pkg.duration}</span>
-                            <span>👨‍🦳 {pkg.pandits} Pandit{pkg.pandits > 1 ? 's' : ''}</span>
+                            <span>👨‍🦳 {pkg.pandits} Purohit/Pandit{pkg.pandits > 1 ? 's' : ''}</span>
                           </div>
                         </div>
                         <div style={{ textAlign: 'right' }}>
@@ -308,7 +308,7 @@ export default function PujaDetailClient({
                   {[
                     ...(detail?.faq || []),
                     { q: 'How far in advance should I book?', a: 'We recommend booking at least 7–10 days in advance to find an auspicious Muhurta and arrange all samagri. For popular dates and festivals, book 3–4 weeks ahead.' },
-                    { q: 'Can I choose the language of the Pandit?', a: 'Absolutely. We offer Pandits in Kannada, Hindi, Telugu, Tamil, Bengali, Marathi, Malayalam and Gujarati. Specify your preference when booking.' },
+                    { q: 'Can I choose the language of the Purohit/Pandit?', a: 'Absolutely. We offer Purohits/Purohit/Pandits in Kannada, Hindi, Telugu, Tamil, Bengali, Marathi, Malayalam and Gujarati. Specify your preference when booking.' },
                     { q: 'Is samagri included in the price?', a: 'Yes! All packages include complete puja samagri delivered to your home. You don\'t need to source anything separately.' },
                     { q: 'What is the cancellation and refund policy?', a: 'We offer 100% refund for cancellations made 48+ hours before the ceremony. For later cancellations, we offer free rescheduling.' },
                   ].map((f, i) => (

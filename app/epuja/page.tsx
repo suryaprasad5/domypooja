@@ -1,7 +1,7 @@
 import Link from 'next/link'
 const HOW = [
   { icon:'📋', title:'1. Choose Your Puja', desc:'Select from 50+ E-Puja services. Choose your preferred date and time based on your timezone.' },
-  { icon:'📹', title:'2. Join the Live Stream', desc:'At the scheduled time, join via Zoom, Google Meet or WhatsApp video. Our Pandit performs the ceremony live.' },
+  { icon:'📹', title:'2. Join the Live Stream', desc:'At the scheduled time, join via Zoom, Google Meet or WhatsApp video. Our Purohit/Pandit performs the ceremony live.' },
   { icon:'🙏', title:'3. Receive Prasad', desc:'Post-ceremony, a puja report and digital prasad blessing are shared. Physical prasad can be couriered worldwide.' },
 ]
 const COUNTRIES = [
@@ -23,7 +23,7 @@ export default function EPujaPage() {
         </div>
         <div style={{ display:'inline-flex',alignItems:'center',gap:8,fontSize:'0.72rem',fontWeight:700,letterSpacing:'2.5px',textTransform:'uppercase',color:'#FDE68A',marginBottom:14 }}>✦ For NRIs & Remote Devotees ✦</div>
         <h1 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(2.4rem,4.5vw,3.8rem)',fontWeight:700,color:'white',marginBottom:16 }}>E-Puja — Sacred Ceremonies Online</h1>
-        <p style={{ fontSize:'1.05rem',color:'rgba(255,255,255,0.65)',maxWidth:540,margin:'0 auto 28px' }}>Participate in authentic Vedic rituals from anywhere in the world via live video call — performed by a verified Pandit in real-time.</p>
+        <p style={{ fontSize:'1.05rem',color:'rgba(255,255,255,0.65)',maxWidth:540,margin:'0 auto 28px' }}>Participate in authentic Vedic rituals from anywhere in the world via live video call — performed by a verified Purohit/Pandit in real-time.</p>
         <div style={{ display:'flex',alignItems:'center',gap:8,justifyContent:'center',fontSize:'0.8rem',color:'rgba(255,255,255,0.5)' }}>
           <Link href="/" style={{ color:'rgba(255,255,255,0.6)',textDecoration:'none' }}>Home</Link><span>/</span><span>E-Puja</span>
         </div>

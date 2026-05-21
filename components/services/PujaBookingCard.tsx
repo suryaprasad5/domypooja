@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { PujaService } from '@/data/services'
 import { PujaDetail } from '@/data/puja-details'
 
-const CITIES = ['Bangalore','Mumbai','Delhi NCR','Hyderabad','Chennai','Pune','Kolkata','Ahmedabad']
-const LANGS  = ['Kannada','Hindi','Telugu','Tamil','Bengali','Marathi','Malayalam','Gujarati']
+const CITIES = ['Bengaluru']
+const LANGS  = ['Kannada','Telugu','Hindi','English']
 
 export default function PujaBookingCard({ puja, detail }: { puja: PujaService; detail: PujaDetail | null }) {
   const [pkg,   setPkg]   = useState(0)
@@ -14,9 +14,9 @@ export default function PujaBookingCard({ puja, detail }: { puja: PujaService; d
   const [phone, setPhone] = useState('')
 
   const packages = detail?.packages || [
-    { name:'Basic',    price: puja.price.startsWith('₹') ? puja.price.split('–')[0].trim() : 'On request', duration:'2–3 hrs', pandits:1, highlights:['Verified Pandit','Complete samagri','Core rituals','Aarti & Prasad'] },
-    { name:'Standard', price:'On request', duration:'3–4 hrs', pandits:1, highlights:['All Basic items','Additional rituals','Extended homa','Navagraha Pooja'] },
-    { name:'Premium',  price:'On request', duration:'4+ hrs',  pandits:2, highlights:['All Standard items','Full ceremony','Brahmin Bhoj','Dedicated coordinator'] },
+    { name:'Basic',    price: puja.price.startsWith('₹') ? puja.price.split('–')[0].trim() : 'On request', duration:'2–3 hrs', purohits:1, highlights:['Verified Purohit/Purohit/Pandit','Complete samagri','Core rituals','Aarti & Prasad'] },
+    { name:'Standard', price:'On request', duration:'3–4 hrs', purohits:1, highlights:['All Basic items','Additional rituals','Extended homa','Navagraha Pooja'] },
+    { name:'Premium',  price:'On request', duration:'4+ hrs',  purohits:2, highlights:['All Standard items','Full ceremony','Brahmin Bhoj','Dedicated coordinator'] },
   ]
 
   const selectedPkg = packages[pkg]
@@ -43,7 +43,7 @@ export default function PujaBookingCard({ puja, detail }: { puja: PujaService; d
         <div style={{ fontFamily:'var(--font-display)', fontSize:'2rem', fontWeight:700, lineHeight:1 }}>
           {packages[0].price}
         </div>
-        <div style={{ fontSize:'0.75rem', opacity:0.75, marginTop:5 }}>All-inclusive · Samagri + Pandit</div>
+        <div style={{ fontSize:'0.75rem', opacity:0.75, marginTop:5 }}>All-inclusive · Samagri + Purohit/Pandit</div>
       </div>
 
       <div style={{ padding:'20px 22px' }}>
@@ -79,7 +79,7 @@ export default function PujaBookingCard({ puja, detail }: { puja: PujaService; d
             </div>
           ))}
           <div style={{ fontSize:'0.72rem', color:'var(--text-faint)', marginTop:6 }}>
-            ⏱️ {selectedPkg.duration} · 👨‍🦳 {selectedPkg.pandits} Pandit{selectedPkg.pandits > 1 ? 's' : ''}
+            ⏱️ {selectedPkg.duration} · 👨‍🦳 {selectedPkg.purohits} Purohit/Pandit{selectedPkg.purohits > 1 ? 's' : ''}
           </div>
         </div>
 
@@ -87,7 +87,7 @@ export default function PujaBookingCard({ puja, detail }: { puja: PujaService; d
         {[
           { label:'Your City',       el:<select value={city} onChange={e=>setCity(e.target.value)} style={inp}><option value="">Select City</option>{CITIES.map(c=><option key={c}>{c}</option>)}</select> },
           { label:'Preferred Date',  el:<input type="date" value={date} onChange={e=>setDate(e.target.value)} style={inp}/> },
-          { label:'Pandit Language', el:<select value={lang} onChange={e=>setLang(e.target.value)} style={inp}><option value="">Select Language</option>{LANGS.map(l=><option key={l}>{l}</option>)}</select> },
+          { label:'Purohit/Pandit Language', el:<select value={lang} onChange={e=>setLang(e.target.value)} style={inp}><option value="">Select Language</option>{LANGS.map(l=><option key={l}>{l}</option>)}</select> },
           { label:'Your Phone',      el:<input type="tel" value={phone} onChange={e=>setPhone(e.target.value)} placeholder="+91 98765 43210" style={inp}/> },
         ].map(f => (
           <div key={f.label} style={{ marginBottom:12 }}>
@@ -98,7 +98,7 @@ export default function PujaBookingCard({ puja, detail }: { puja: PujaService; d
 
         <button onClick={submit}
           style={{ width:'100%', padding:'13px', borderRadius:'999px', background:'linear-gradient(135deg,var(--saffron),#C2540A)', color:'white', border:'none', fontFamily:'var(--font-body)', fontSize:'0.95rem', fontWeight:700, cursor:'pointer', boxShadow:'0 6px 20px rgba(249,115,22,0.3)', marginBottom:8, marginTop:4 }}>
-          🙏 Book This Puja
+          🙏 Book This Pooja
         </button>
         <a href={`https://wa.me/919036050108?text=${encodeURIComponent(`I want to book: ${puja.name} — ${selectedPkg.name} Package`)}`}
           target="_blank" rel="noreferrer"

@@ -13,11 +13,20 @@ const BADGE_LABELS: Record<string, string> = {
   remedy:'Remedy', devi:'Devi', pitru:'Pitru', temple:'Temple', grand:'Grand',
 }
 
+const ALL_CITIES = [
+  { name:'Bengaluru', available:true },
+  { name:'Mumbai', available:false },
+  { name:'Delhi NCR', available:false },
+  { name:'Hyderabad', available:false },
+  { name:'Chennai', available:false },
+  { name:'Pune', available:false },
+]
+
 type FilterMode = 'all' | PujaCategory | 'samskaras'
 
 export default function PujaServicesPage() {
-  const [mode, setMode]   = useState<FilterMode>('all')
-  const [q,    setQ]      = useState('')
+  const [mode, setMode] = useState<FilterMode>('all')
+  const [q,    setQ]    = useState('')
 
   const filtered = useMemo(() => {
     let list = mode === 'all' ? SERVICES
@@ -44,20 +53,47 @@ export default function PujaServicesPage() {
         <div style={{ position:'absolute',inset:0,display:'flex',alignItems:'center',justifyContent:'center',pointerEvents:'none' }}>
           <span style={{ fontFamily:'var(--font-devan)',fontSize:'50vw',color:'rgba(255,255,255,0.025)',lineHeight:1 }}>ॐ</span>
         </div>
-        <div style={{ display:'inline-flex',alignItems:'center',gap:8,fontSize:'0.72rem',fontWeight:700,letterSpacing:'2.5px',textTransform:'uppercase',color:'#FDE68A',marginBottom:14 }}>✦ Kannada Pooja Services · Bangalore ✦</div>
+        <div style={{ display:'inline-flex',alignItems:'center',gap:8,fontSize:'0.72rem',fontWeight:700,letterSpacing:'2.5px',textTransform:'uppercase',color:'#FDE68A',marginBottom:14 }}>✦ Kannada Pooja Services · Bengaluru ✦</div>
         <h1 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(2.4rem,4.5vw,3.8rem)',fontWeight:700,color:'white',marginBottom:16 }}>118 Pooja & Ritual Services</h1>
-        <p style={{ fontSize:'1.05rem',color:'rgba(255,255,255,0.65)',maxWidth:540,margin:'0 auto 28px' }}>Ceremonies · Homas · Japas · Parihara · Ancestor Rituals — performed by verified Kannada Pandits across Bangalore.</p>
+        <p style={{ fontSize:'1.05rem',color:'rgba(255,255,255,0.65)',maxWidth:560,margin:'0 auto 16px' }}>
+          Shodasha Samskaras · Homas & Shantis · General Poojas — performed by verified Purohits/Pandits across Bengaluru.
+        </p>
+        {/* Free Muhurtam banner */}
+        <div style={{ display:'inline-flex',alignItems:'center',gap:8,background:'rgba(255,255,255,0.12)',border:'1px solid rgba(255,255,255,0.25)',borderRadius:12,padding:'8px 20px',fontSize:'0.85rem',fontWeight:600,color:'#FDE68A',marginBottom:24 }}>
+          🎁 First-time users: Muhurtam selection FREE of cost
+        </div>
+        {/* Pricing note */}
+        <div style={{ background:'rgba(249,115,22,0.15)',border:'1px solid rgba(249,115,22,0.3)',borderRadius:12,padding:'12px 20px',maxWidth:580,margin:'0 auto 28px',fontSize:'0.83rem',color:'rgba(255,255,255,0.85)',lineHeight:1.6 }}>
+          💡 <strong>Pricing Note:</strong> Prices shown are indicative ranges (e.g. ₹5,000 – ₹22,000). Exact pricing depends on Saamagri requirements, Alankara/Decoration and scale of ceremony. Contact us for a customised quote.
+        </div>
         <div style={{ display:'flex',alignItems:'center',gap:8,justifyContent:'center',fontSize:'0.8rem',color:'rgba(255,255,255,0.5)' }}>
-          <Link href="/" style={{ color:'rgba(255,255,255,0.6)',textDecoration:'none' }}>Home</Link>
-          <span>/</span><span>Puja Services</span>
+          <Link href="/" style={{ color:'rgba(255,255,255,0.6)',textDecoration:'none' }}>Home</Link><span>/</span><span>Puja Services</span>
         </div>
       </div>
 
       <section style={{ padding:'60px 8%' }}>
+        {/* City filter */}
+        <div style={{ display:'flex',gap:8,flexWrap:'wrap',marginBottom:24 }}>
+          {ALL_CITIES.map(c => (
+            <div key={c.name} style={{
+              padding:'7px 18px', borderRadius:'999px',
+              border:`1.5px solid ${c.available ? 'var(--teal)' : 'var(--border)'}`,
+              background: c.available ? 'var(--teal)' : 'white',
+              color: c.available ? 'white' : 'var(--text-faint)',
+              fontSize:'0.8rem', fontWeight:600,
+              cursor: c.available ? 'pointer' : 'default',
+              display:'flex', alignItems:'center', gap:6,
+            }}>
+              {c.name}
+              {!c.available && <span style={{ fontSize:'0.65rem',background:'var(--ivory-mid)',color:'var(--text-faint)',padding:'1px 6px',borderRadius:'999px',marginLeft:4 }}>Coming Soon</span>}
+            </div>
+          ))}
+        </div>
+
         {/* Search */}
         <div style={{ display:'flex',gap:10,marginBottom:24,background:'white',border:'1.5px solid var(--border-warm)',borderRadius:'999px',padding:'6px 6px 6px 20px',boxShadow:'0 2px 12px rgba(249,115,22,0.08)',maxWidth:680 }}>
-          <input value={q} onChange={e => { setQ(e.target.value); if (e.target.value) setMode('all') }}
-            placeholder="🔍  Search — e.g. Gruhapravesha, Mrityunjaya, Kala Sarpa..."
+          <input value={q} onChange={e => { setQ(e.target.value); if(e.target.value) setMode('all') }}
+            placeholder="🔍  Search — e.g. Gruhapravesha, Mrityunjaya, Upanayana..."
             style={{ flex:1,border:'none',outline:'none',fontFamily:'var(--font-body)',fontSize:'0.88rem',color:'var(--text-body)',background:'transparent' }} />
           {q && <button onClick={() => setQ('')} style={{ background:'none',border:'none',cursor:'pointer',color:'var(--text-faint)',fontSize:'1.1rem',padding:'0 8px' }}>✕</button>}
           <button style={{ background:'linear-gradient(135deg,var(--saffron),#C2540A)',color:'white',border:'none',borderRadius:'999px',padding:'8px 20px',fontFamily:'var(--font-body)',fontSize:'0.82rem',fontWeight:700,cursor:'pointer' }}>Search</button>
@@ -70,15 +106,15 @@ export default function PujaServicesPage() {
 
             {/* Samskaras special filter */}
             <div style={{ marginBottom:20 }}>
-              <div style={{ fontSize:'0.7rem',fontWeight:700,color:'var(--text-faint)',textTransform:'uppercase',letterSpacing:'1.2px',marginBottom:8 }}>Special Filter</div>
+              <div style={{ fontSize:'0.7rem',fontWeight:700,color:'var(--text-faint)',textTransform:'uppercase',letterSpacing:'1.2px',marginBottom:8 }}>Highlight</div>
               <div onClick={() => { setMode('samskaras'); setQ('') }}
                 style={{ display:'flex',alignItems:'center',gap:10,padding:'10px 12px',borderRadius:10,cursor:'pointer',
-                  background: mode==='samskaras' ? 'linear-gradient(135deg,rgba(249,115,22,0.12),rgba(249,115,22,0.06))' : 'var(--ivory-warm)',
-                  border: `1.5px solid ${mode==='samskaras' ? 'var(--saffron)' : 'var(--border-warm)'}`,
+                  background: mode==='samskaras'?'linear-gradient(135deg,rgba(249,115,22,0.12),rgba(249,115,22,0.06))':'var(--ivory-warm)',
+                  border:`1.5px solid ${mode==='samskaras'?'var(--saffron)':'var(--border-warm)'}`,
                   transition:'all 0.18s' }}>
                 <span style={{ fontSize:'1.2rem' }}>🕉️</span>
                 <div>
-                  <div style={{ fontSize:'0.83rem',fontWeight:700,color: mode==='samskaras' ? 'var(--saffron-deep)' : 'var(--text-dark)' }}>Shodasha Samskaras</div>
+                  <div style={{ fontSize:'0.83rem',fontWeight:700,color:mode==='samskaras'?'var(--saffron-deep)':'var(--text-dark)' }}>Shodasha Samskaras</div>
                   <div style={{ fontSize:'0.7rem',color:'var(--text-faint)' }}>16 sacred life ceremonies</div>
                 </div>
                 <span style={{ marginLeft:'auto',fontSize:'0.68rem',background:mode==='samskaras'?'var(--saffron)':'var(--ivory-mid)',color:mode==='samskaras'?'white':'var(--text-faint)',padding:'1px 7px',borderRadius:'999px',fontWeight:700 }}>{SAMSKARAS.length}</span>
@@ -92,8 +128,8 @@ export default function PujaServicesPage() {
               ].map(o => (
                 <div key={o.id} onClick={() => { setMode(o.id as FilterMode); setQ('') }}
                   style={{ display:'flex',alignItems:'center',justifyContent:'space-between',padding:'8px 12px',borderRadius:10,fontSize:'0.83rem',
-                    color: mode===o.id?'var(--saffron-deep)':'var(--text-body)',
-                    background: mode===o.id?'rgba(249,115,22,0.08)':'transparent',
+                    color:mode===o.id?'var(--saffron-deep)':'var(--text-body)',
+                    background:mode===o.id?'rgba(249,115,22,0.08)':'transparent',
                     border:`1px solid ${mode===o.id?'var(--border-warm)':'transparent'}`,
                     cursor:'pointer',marginBottom:3,fontWeight:mode===o.id?600:400,transition:'all 0.18s' }}>
                   <span>{o.icon} {o.label}</span>
@@ -102,7 +138,12 @@ export default function PujaServicesPage() {
               ))}
             </div>
 
-            <div style={{ display:'flex',flexDirection:'column',gap:10,paddingTop:16,borderTop:'1px solid var(--border)' }}>
+            {/* Pricing reminder */}
+            <div style={{ background:'rgba(249,115,22,0.06)',border:'1px solid var(--border-warm)',borderRadius:10,padding:'12px 14px',marginBottom:16,fontSize:'0.75rem',color:'var(--saffron-deep)',lineHeight:1.55 }}>
+              💡 Prices shown are ranges. Saamagri & Alankara available on request. Contact us for exact quote.
+            </div>
+
+            <div style={{ display:'flex',flexDirection:'column',gap:10 }}>
               <a href="/contact" style={{ display:'block',padding:'11px',borderRadius:'999px',background:'linear-gradient(135deg,var(--saffron),#C2540A)',color:'white',fontWeight:600,fontSize:'0.84rem',textAlign:'center',textDecoration:'none' }}>📞 Talk to Expert</a>
               <a href="https://wa.me/919036050108" target="_blank" rel="noreferrer" style={{ display:'block',padding:'11px',borderRadius:'999px',border:'2px solid #0F766E',color:'#0F766E',fontWeight:600,fontSize:'0.84rem',textAlign:'center',textDecoration:'none' }}>💬 WhatsApp</a>
             </div>
@@ -113,13 +154,13 @@ export default function PujaServicesPage() {
             <div style={{ display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:28,flexWrap:'wrap',gap:14 }}>
               <div>
                 <h2 style={{ fontFamily:'var(--font-display)',fontSize:'1.6rem',color:'var(--text-dark)' }}>
-                  {mode==='samskaras' ? '🕉️ Shodasha Samskaras — 16 Sacred Life Ceremonies'
-                   : mode==='all' && !q ? 'All Puja Services'
-                   : q ? `Results for "${q}"`
-                   : CATEGORIES[mode as PujaCategory]?.label}
+                  {mode==='samskaras'?'🕉️ Shodasha Samskaras'
+                   :mode==='all'&&!q?'All Pooja Services'
+                   :q?`Results for "${q}"`
+                   :CATEGORIES[mode as PujaCategory]?.label}
                 </h2>
                 <div style={{ fontSize:'0.8rem',color:'var(--text-faint)',marginTop:2 }}>
-                  {filtered.length} service{filtered.length!==1?'s':''} · Bangalore · Kannada
+                  {filtered.length} service{filtered.length!==1?'s':''} · Bengaluru · Kannada, Telugu, Hindi & English
                 </div>
               </div>
               <select style={{ padding:'8px 14px',borderRadius:10,border:'1px solid var(--border-warm)',fontFamily:'var(--font-body)',fontSize:'0.84rem',background:'white',cursor:'pointer',outline:'none' }}>
@@ -127,18 +168,16 @@ export default function PujaServicesPage() {
               </select>
             </div>
 
-            {/* Samskaras info banner */}
-            {mode === 'samskaras' && (
+            {mode==='samskaras' && (
               <div style={{ background:'linear-gradient(135deg,rgba(249,115,22,0.08),rgba(15,118,110,0.06))',border:'1px solid var(--border-warm)',borderRadius:14,padding:'18px 22px',marginBottom:32,display:'flex',gap:16,alignItems:'flex-start' }}>
                 <span style={{ fontSize:'2rem',flexShrink:0 }}>🕉️</span>
                 <div>
-                  <div style={{ fontFamily:'var(--font-display)',fontSize:'1.05rem',fontWeight:700,color:'var(--text-dark)',marginBottom:6 }}>Shodasha Samskaras — The 16 Sacred Rites of Passage</div>
-                  <p style={{ fontSize:'0.85rem',color:'var(--text-muted)',lineHeight:1.65 }}>The Shodasha Samskaras are 16 sacred rituals that mark every key milestone of a Hindu's life — from conception to the last rites. These ceremonies purify, bless and connect the individual to Vedic tradition at each stage of the life journey.</p>
+                  <div style={{ fontFamily:'var(--font-display)',fontSize:'1.05rem',fontWeight:700,color:'var(--text-dark)',marginBottom:6 }}>Shodasha Samskaras — 16 Sacred Rites of Passage</div>
+                  <p style={{ fontSize:'0.85rem',color:'var(--text-muted)',lineHeight:1.65 }}>The 16 sacred rituals that mark every key milestone of a Hindu&apos;s life — from birth to last rites. These ceremonies purify, bless and connect the individual to Vedic tradition at each stage of the life journey.</p>
                 </div>
               </div>
             )}
 
-            {/* Grouped view (default all) */}
             {grouped && !q ? (
               Object.entries(grouped).map(([catKey, items]) => (
                 <div key={catKey} style={{ marginBottom:52 }}>
@@ -169,10 +208,9 @@ export default function PujaServicesPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section style={{ background:'linear-gradient(135deg,#1C1009 0%,#2C1505 55%,#0D5C55 100%)',padding:'70px 8%',textAlign:'center' }}>
         <h2 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(1.9rem,3.5vw,3rem)',color:'white',marginBottom:12 }}>Need Help Choosing?</h2>
-        <p style={{ color:'rgba(255,255,255,0.6)',maxWidth:520,margin:'0 auto 36px',lineHeight:1.7 }}>Not sure which puja to book? Our team will guide you to the right ceremony for your occasion, tradition and budget.</p>
+        <p style={{ color:'rgba(255,255,255,0.6)',maxWidth:520,margin:'0 auto 36px',lineHeight:1.7 }}>Not sure which pooja to book? Our team will guide you and provide a customised quote — including Saamagri and Alankara if needed.</p>
         <div style={{ display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap' }}>
           <a href="https://wa.me/919036050108" target="_blank" rel="noreferrer" style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'16px 38px',borderRadius:'999px',background:'white',color:'var(--saffron)',fontWeight:600,fontSize:'1rem',textDecoration:'none' }}>💬 WhatsApp Us</a>
           <a href="tel:+918061160400" style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'16px 38px',borderRadius:'999px',background:'rgba(255,255,255,0.15)',color:'white',border:'2px solid rgba(255,255,255,0.4)',fontWeight:600,fontSize:'1rem',textDecoration:'none' }}>📞 080-6116-0400</a>
@@ -198,30 +236,23 @@ function ServiceGrid({ items, badgeColors, badgeLabels, onBook }: {
               </span>
             )}
             {s.isSamskara && (
-              <span style={{ position:'absolute',top:7,left:7,fontSize:'0.65rem',background:'rgba(255,251,245,0.9)',color:'#C2540A',padding:'2px 7px',borderRadius:'999px',fontWeight:700,border:'1px solid rgba(249,115,22,0.3)' }}>
-                Samskara
-              </span>
+              <span style={{ position:'absolute',top:7,left:7,fontSize:'0.6rem',background:'rgba(255,251,245,0.9)',color:'#C2540A',padding:'2px 6px',borderRadius:'999px',fontWeight:700,border:'1px solid rgba(249,115,22,0.3)' }}>Samskara</span>
             )}
           </div>
           <div style={{ padding:'12px 13px 14px',flex:1,display:'flex',flexDirection:'column' }}>
             <div style={{ fontFamily:'var(--font-display)',fontSize:'0.88rem',fontWeight:600,color:'var(--text-dark)',lineHeight:1.3,marginBottom:6 }}>{s.name}</div>
-            <div style={{ fontSize:'0.7rem',color:'var(--text-faint)',marginTop:'auto',marginBottom:10 }}>
+            <div style={{ fontSize:'0.7rem',color:'var(--text-faint)',marginTop:'auto',marginBottom:10,lineHeight:1.4 }}>
               {s.price.startsWith('₹')
-                ? <>From <strong style={{ color:'var(--saffron)',fontSize:'0.86rem' }}>{s.price.split('–')[0].trim()}</strong></>
+                ? <><span style={{ color:'var(--text-faint)' }}>Range: </span><strong style={{ color:'var(--saffron)',fontSize:'0.82rem' }}>{s.price}</strong></>
                 : s.price}
             </div>
-            {/* Action buttons row */}
             <div style={{ display:'flex',gap:6 }}>
               <Link href={`/puja/${s.id}`}
                 style={{ flex:1,padding:'6px 8px',borderRadius:8,border:'1.5px solid var(--border)',color:'var(--text-muted)',background:'var(--ivory-warm)',fontFamily:'var(--font-body)',fontSize:'0.72rem',fontWeight:600,textAlign:'center',textDecoration:'none',transition:'all 0.18s' }}
-                className="details-btn">
-                Details
-              </Link>
+                className="details-btn">Details</Link>
               <button onClick={() => onBook(s.name)}
                 style={{ flex:1,padding:'6px 8px',borderRadius:8,border:'1.5px solid var(--saffron)',color:'var(--saffron)',background:'transparent',fontFamily:'var(--font-body)',fontSize:'0.72rem',fontWeight:700,cursor:'pointer',transition:'all 0.18s' }}
-                className="book-btn">
-                Book
-              </button>
+                className="book-btn">Book</button>
             </div>
           </div>
         </div>

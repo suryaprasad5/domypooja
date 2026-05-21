@@ -14,7 +14,7 @@ export default function Events() {
         <div style={{ display:'inline-flex',alignItems:'center',gap:8,fontSize:'0.72rem',fontWeight:700,letterSpacing:'2.5px',textTransform:'uppercase',color:'var(--saffron)',marginBottom:14 }}>✦ Sacred Calendar ✦</div>
         <h2 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(1.9rem,3.5vw,3rem)',fontWeight:700,color:'var(--text-dark)' }}>Upcoming Festivals & Events</h2>
         <div style={{ width:60,height:3,background:'linear-gradient(90deg,var(--saffron),#F59E0B)',borderRadius:2,margin:'20px auto' }} />
-        <p style={{ fontSize:'1.05rem',color:'var(--text-muted)',maxWidth:540,margin:'0 auto' }}>Book early for auspicious Hindu festivals. Our Pandits are available for all major and minor celebrations.</p>
+        <p style={{ fontSize:'1.05rem',color:'var(--text-muted)',maxWidth:540,margin:'0 auto' }}>Book early for auspicious Hindu festivals. Our Purohits/Purohits/Purohit/Pandits are available for all major and minor celebrations.</p>
       </div>
       <div style={{ display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:22 }} className="events-grid">
         {EVENTS.map(e => (
