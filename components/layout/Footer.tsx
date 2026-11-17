@@ -18,6 +18,7 @@ const quickLinks = [
   { href:'/epuja',          label:'E-Pooja Online' },
   { href:'/blog',           label:'Blog & Articles' },
   { href:'/contact',        label:'Contact Us' },
+  { href:'/account',        label:'My Account / Login' },
   { href:'/contact',        label:'Purohit/Pandit Registration' },
 ]
 
@@ -44,7 +45,7 @@ export default function Footer() {
           </div>
           <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
             {[
-              { icon:'📞', href:'tel:+918061160400',               label:'080-6116-0400' },
+              { icon:'📞', href:'tel:+919742155777',               label:'+91 97421 55777' },
               { icon:'✉️', href:'mailto:namaste@domypooja.com',    label:'namaste@domypooja.com' },
               { icon:'📍', href:'#',                               label:'Bengaluru — 560076, Karnataka' },
             ].map(c => (
@@ -57,7 +58,7 @@ export default function Footer() {
             {['📘','📸','🐦'].map(icon => (
               <a key={icon} href="#" style={{ width:36, height:36, borderRadius:'50%', background:'rgba(255,255,255,0.08)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'1rem' }}>{icon}</a>
             ))}
-            <a href="https://wa.me/919036050108" target="_blank" rel="noreferrer"
+            <a href="https://wa.me/919742155777" target="_blank" rel="noreferrer"
               style={{ width:36, height:36, borderRadius:'50%', background:'rgba(255,255,255,0.08)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'1rem' }}>💬</a>
           </div>
         </div>

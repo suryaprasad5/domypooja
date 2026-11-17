@@ -71,8 +71,8 @@ export default function EPujaPage() {
         <h2 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(1.9rem,3.5vw,3rem)',fontWeight:700,color:'white',marginBottom:14 }}>Ready to Book Your Online Ceremony?</h2>
         <p style={{ color:'rgba(255,255,255,0.6)',maxWidth:520,margin:'0 auto 36px',lineHeight:1.7 }}>Our team will coordinate your puja for any date, time and timezone. WhatsApp us or call to get started in minutes.</p>
         <div style={{ display:'flex',gap:16,justifyContent:'center',flexWrap:'wrap' }}>
-          <a href="https://wa.me/919036050108?text=I want to book an E-Puja online" target="_blank" rel="noreferrer" style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'16px 38px',borderRadius:'999px',background:'white',color:'var(--saffron)',fontWeight:600,fontSize:'1rem',textDecoration:'none' }}>💬 WhatsApp to Book</a>
-          <a href="tel:+918061160400" style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'16px 38px',borderRadius:'999px',background:'rgba(255,255,255,0.15)',color:'white',border:'2px solid rgba(255,255,255,0.4)',fontWeight:600,fontSize:'1rem',textDecoration:'none' }}>📞 Call 080-6116-0400</a>
+          <a href="https://wa.me/919742155777?text=I want to book an E-Puja online" target="_blank" rel="noreferrer" style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'16px 38px',borderRadius:'999px',background:'white',color:'var(--saffron)',fontWeight:600,fontSize:'1rem',textDecoration:'none' }}>💬 WhatsApp to Book</a>
+          <a href="tel:+919742155777" style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'16px 38px',borderRadius:'999px',background:'rgba(255,255,255,0.15)',color:'white',border:'2px solid rgba(255,255,255,0.4)',fontWeight:600,fontSize:'1rem',textDecoration:'none' }}>📞 Call +91 97421 55777</a>
         </div>
       </section>
     </>

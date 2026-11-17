@@ -7,12 +7,12 @@ export interface PujaPackage {
 }
 
 export interface PujaDetail {
-  id: string
+  id?: string
   procedure: string
   keyInsights: string[]
   benefits: string[]
-  SaamagriByUs: string[]
-  SaamagriByYou: string[]
+  samagriByUs: string[]
+  samagriByYou: string[]
   duration: string
   bestTime?: string
   packages: PujaPackage[]
@@ -39,8 +39,8 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
       'Pleases all nine planets (Navagrahas) for smooth family life',
       'Invokes blessings of Vastu Purusha for a harmonious living space',
     ],
-    SaamagriByUs: ['Arshina (Turmeric)', 'Kumkum', 'Mango leaves', 'Tulasi', 'Darba', 'Kalasha', 'Vastra (Cloth)', 'Navadhanya', 'Beetle Leaves & Nuts', 'Homam Sticks & Samidha', 'Dravyas', 'Ghee', 'Flowers & Garlands', 'Camphor'],
-    SaamagriByYou: ['Gas stove', 'New milk boiling vessel', 'Vessels, Trays & Plates', 'Oil Lamps (Diyas)', 'Mats', 'Bowls', 'Photos of deities', 'Coconuts', 'Prasadam items'],
+    samagriByUs: ['Arshina (Turmeric)', 'Kumkum', 'Mango leaves', 'Tulasi', 'Darba', 'Kalasha', 'Vastra (Cloth)', 'Navadhanya', 'Beetle Leaves & Nuts', 'Homam Sticks & Samidha', 'Dravyas', 'Ghee', 'Flowers & Garlands', 'Camphor'],
+    samagriByYou: ['Gas stove', 'New milk boiling vessel', 'Vessels, Trays & Plates', 'Oil Lamps (Diyas)', 'Mats', 'Bowls', 'Photos of deities', 'Coconuts', 'Prasadam items'],
     packages: [
       { name: 'Silver', price: '₹18,800', duration: '4–5 hrs', pandits: 1, highlights: ['Ganapathi Pooja', 'Punyahavachanam', 'Vastu Pooja', 'Navagraha Homa', 'Milk Boiling Ceremony', 'Saamagri included'] },
       { name: 'Gold', price: '₹38,000', duration: '6–7 hrs', pandits: 2, highlights: ['All Silver items', 'Ganapathi Homa', 'Lakshmi Kubera Homa', 'Vastu Rakshogana Homa', 'Vastu Bali', 'Satyanarayana Vrata'] },
@@ -70,8 +70,8 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
       'Brings peace, prosperity and happiness to the family',
       'Thanksgiving puja — express gratitude for blessings received',
     ],
-    SaamagriByUs: ['Kalasha', 'Panchapatra & Uddharani', 'Flowers & Garlands', 'Turmeric & Kumkum', 'Betel leaves & nuts', 'Banana', 'Coconut', 'Camphor & Agarbatti', 'Ghee', 'Rava/Sooji for Sheera', 'Satyanarayana idol/photo'],
-    SaamagriByYou: ['Plates & Trays', 'Bowls', 'Mats', 'Gas stove for Sheera preparation', 'Milk & Sugar'],
+    samagriByUs: ['Kalasha', 'Panchapatra & Uddharani', 'Flowers & Garlands', 'Turmeric & Kumkum', 'Betel leaves & nuts', 'Banana', 'Coconut', 'Camphor & Agarbatti', 'Ghee', 'Rava/Sooji for Sheera', 'Satyanarayana idol/photo'],
+    samagriByYou: ['Plates & Trays', 'Bowls', 'Mats', 'Gas stove for Sheera preparation', 'Milk & Sugar'],
     packages: [
       { name: 'Silver', price: '₹2,500', duration: '1.5–2 hrs', pandits: 1, highlights: ['Ganapathi Pooja', 'Kalasha Pooja', 'Satyanarayana Vrata Katha (5 chapters)', 'Mangalarati', 'Prasad (Sheera) preparation', 'Saamagri included if opted'] },
       { name: 'Gold', price: '₹8,500', duration: '2–3 hrs', pandits: 1, highlights: ['All Silver items', 'Navagraha Pooja', 'Lakshmi Pooja', 'Extended Archana', 'Vastra (cloth) offering'] },
@@ -101,8 +101,8 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
       'Brings prosperity, auspiciousness and divine protection',
       'Clears negativity and fills the space with positive cosmic energy',
     ],
-    SaamagriByUs: ['Ganesha idol/photo', 'Durva grass (21 blades)', 'Red flowers (Hibiscus/Jaaswand)', 'Modak ingredients', 'Turmeric & Kumkum', 'Sandalwood paste', 'Panchamrit', 'Ghee & Camphor', 'Betel leaves & nuts'],
-    SaamagriByYou: ['Puja plates & lamps', 'Mats', 'Water in vessel'],
+    samagriByUs: ['Ganesha idol/photo', 'Durva grass (21 blades)', 'Red flowers (Hibiscus/Jaaswand)', 'Modak ingredients', 'Turmeric & Kumkum', 'Sandalwood paste', 'Panchamrit', 'Ghee & Camphor', 'Betel leaves & nuts'],
+    samagriByYou: ['Puja plates & lamps', 'Mats', 'Water in vessel'],
     packages: [
       { name: 'Silver', price: '₹4,500', duration: '1–1.5 hrs', pandits: 1, highlights: ['Ganapathi Avahana & Shodashopachara', 'Ganapathi Atharvashirsha Parayana', 'Aarti & Modak Prasad', 'Saamagri included if opted'] },
       { name: 'Gold', price: '₹6,500', duration: '1.5–2 hrs', pandits: 1, highlights: ['All Silver items', '21 Durva Archana', 'Ganapathi Sahasranama', 'Extended Stotra chanting'] },
@@ -131,8 +131,8 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
       'Protects from accidents, diseases and untimely death',
       'Fulfills desires for wealth, progeny and family harmony',
     ],
-    SaamagriByUs: ['Shiva Linga (if needed)', 'Panchamrit ingredients', 'Bilva leaves (108/1008)', 'Vibhuti (sacred ash)', 'Dhatura flowers', 'White flowers', 'Ghee & Camphor', 'Panchamrta Abhisheka items', 'Rudraksha for Archana'],
-    SaamagriByYou: ['Abhisheka vessel (Kalasha)', 'Puja plates & lamps', 'Mats', 'Water containers'],
+    samagriByUs: ['Shiva Linga (if needed)', 'Panchamrit ingredients', 'Bilva leaves (108/1008)', 'Vibhuti (sacred ash)', 'Dhatura flowers', 'White flowers', 'Ghee & Camphor', 'Panchamrta Abhisheka items', 'Rudraksha for Archana'],
+    samagriByYou: ['Abhisheka vessel (Kalasha)', 'Puja plates & lamps', 'Mats', 'Water containers'],
     packages: [
       { name: 'Silver', price: '₹5,300', duration: '2–3 hrs', pandits: 1, highlights: ['Ganapathi Pooja', 'Panchamrit Abhishekam', 'Namakam & Chamakam chanting', '108 Bilva Archana', 'Vibhuti Prasad'] },
       { name: 'Gold', price: '₹18,000', duration: '3–4 hrs', pandits: 2, highlights: ['All Silver items', '1008 Bilva Archana', 'Ashtottara Shatanamavali', 'Rudra Trisati', 'Shiva Sahasranama Archana'] },
@@ -161,8 +161,8 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
       'Grants longevity, vitality and overall wellbeing',
       'Liberates from the cycle of suffering and bestows moksha',
     ],
-    SaamagriByUs: ['Homa kunda & Saamagri', 'Sesame seeds (Til)', 'Sacred herbs (Aushadi)', 'Ghee', 'Samidha (wood)', 'Bilva leaves', 'Vibhuti', 'Mrutyunjaya Yantra (in Platinum)'],
-    SaamagriByYou: ['Mats & seating', 'Water containers', 'Plates for Prasad'],
+    samagriByUs: ['Homa kunda & Saamagri', 'Sesame seeds (Til)', 'Sacred herbs (Aushadi)', 'Ghee', 'Samidha (wood)', 'Bilva leaves', 'Vibhuti', 'Mrutyunjaya Yantra (in Platinum)'],
+    samagriByYou: ['Mats & seating', 'Water containers', 'Plates for Prasad'],
     packages: [
       { name: 'Silver', price: '₹9,500', duration: '3 hrs', pandits: 1, highlights: ['Ganapathi Pooja', 'Navagraha Pooja', 'Mrityunjaya Mantra Japa (1,008 times)', 'Homa with ghee & sesame', 'Vibhuti Prasad'] },
       { name: 'Gold', price: '₹33,000', duration: '4–5 hrs', pandits: 2, highlights: ['All Silver items', 'Mrityunjaya Japa (11,000 times)', 'Rudrabhishekam', 'Extended Homa', 'Mrutyunjaya Yantra'] },
@@ -191,8 +191,8 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
       'Neutralizes negative directions and harmful energy zones',
       'Protects from recurring problems, accidents and financial losses',
     ],
-    SaamagriByUs: ['Vastu Mandala materials', 'Navadhanya', 'Turmeric & Kumkum', 'Homa Saamagri', 'Flowers & Mango leaves', 'Kalasha', 'Ghee & Camphor', 'Darba grass'],
-    SaamagriByYou: ['Plates & vessels', 'Water containers', 'Mats', 'Lamps & oil'],
+    samagriByUs: ['Vastu Mandala materials', 'Navadhanya', 'Turmeric & Kumkum', 'Homa Saamagri', 'Flowers & Mango leaves', 'Kalasha', 'Ghee & Camphor', 'Darba grass'],
+    samagriByYou: ['Plates & vessels', 'Water containers', 'Mats', 'Lamps & oil'],
     packages: [
       { name: 'Silver', price: '₹13,300', duration: '3–4 hrs', pandits: 1, highlights: ['Ganapathi Pooja', 'Punyahavachanam', 'Vastu Devata Puja (32 devatas)', 'Vastu Homa', 'Room-by-room purification'] },
       { name: 'Gold', price: '₹24,000', duration: '4–5 hrs', pandits: 2, highlights: ['All Silver items', 'Navagraha Pooja', 'Extended Vastu Sukta chanting', 'Griha Shanti Japa', 'Kalasha Abhishekam'] },
@@ -221,8 +221,8 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
       'Purifies the mother and child after the delivery period',
       'Establishes the child\'s spiritual identity in the Vedic tradition',
     ],
-    SaamagriByUs: ['Kalasha & Puja items', 'Turmeric & Kumkum', 'Flowers', 'Coconut', 'Camphor & Agarbatti', 'Navagraha rice/grains', 'New cloth for baby', 'Betel leaves & nuts'],
-    SaamagriByYou: ['New clothes for parents', 'Gifts for Purohit (Dakshina)', 'Baby\'s birth chart (if available)', 'Honey & ghee for Jatakarma'],
+    samagriByUs: ['Kalasha & Puja items', 'Turmeric & Kumkum', 'Flowers', 'Coconut', 'Camphor & Agarbatti', 'Navagraha rice/grains', 'New cloth for baby', 'Betel leaves & nuts'],
+    samagriByYou: ['New clothes for parents', 'Gifts for Purohit (Dakshina)', 'Baby\'s birth chart (if available)', 'Honey & ghee for Jatakarma'],
     packages: [
       { name: 'Silver', price: '₹5,500', duration: '1.5–2 hrs', pandits: 1, highlights: ['Ganapathi Pooja', 'Punyahavachanam', 'Navagraha Puja', 'Namakarana ritual', 'Aarti & Prasad', 'Saamagri included if opted'] },
       { name: 'Gold', price: '₹10,000', duration: '2–3 hrs', pandits: 1, highlights: ['All Silver items', 'Janam Kundali preparation', 'Jatakarma Sanskar', 'Nakshatra Shanti', 'Extended blessings & Archana'] },
@@ -251,8 +251,8 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
       'Connects the boy to the unbroken lineage of Vedic tradition',
       'Prepares the child for responsible adult life with dharmic values',
     ],
-    SaamagriByUs: ['Yagnopaveeta (sacred thread)', 'Homa Saamagri', 'Samidha', 'Ghee', 'Flowers', 'Kalasha', 'Darbha grass', 'Vastra (cloth)', 'Navadhanya', 'All ritual items'],
-    SaamagriByYou: ['New dhoti for the boy', 'New clothes for parents', 'Mangala Sutra (if applicable)', 'Dakshina for Purohit', 'Feast arrangements for guests'],
+    samagriByUs: ['Yagnopaveeta (sacred thread)', 'Homa Saamagri', 'Samidha', 'Ghee', 'Flowers', 'Kalasha', 'Darbha grass', 'Vastra (cloth)', 'Navadhanya', 'All ritual items'],
+    samagriByYou: ['New dhoti for the boy', 'New clothes for parents', 'Mangala Sutra (if applicable)', 'Dakshina for Purohit', 'Feast arrangements for guests'],
     packages: [
       { name: 'Silver', price: '₹19,300', duration: '6–7 hrs', pandits: 2, highlights: ['Ganapathi Pooja', 'Nandi Shradha', 'Chuda Karma', 'Yagnopaveeta Dharana', 'Gayatri Mantra Upadesa', 'Surya Namaskar', 'Bhiksha Vandana'] },
       { name: 'Gold', price: '₹55,000', duration: '7–8 hrs', pandits: 3, highlights: ['All Silver items', 'Agni Pooja', 'Samavartana', 'Vedic Ashirvadam', 'Extended homa', 'Full Saamagri'] },
@@ -282,8 +282,8 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
       'Creates a spiritually charged, positive atmosphere for the baby',
       'Strengthens the bond between husband and wife during pregnancy',
     ],
-    SaamagriByUs: ['Kalasha', 'Flowers', 'Fruits basket', 'Turmeric & Kumkum', 'New sari/cloth', 'Bangles', 'Coconut', 'Betel leaves & nuts', 'Camphor & Agarbatti'],
-    SaamagriByYou: ['Fruits and sweets for distribution', 'New clothes for the mother', 'Seating arrangements for guests'],
+    samagriByUs: ['Kalasha', 'Flowers', 'Fruits basket', 'Turmeric & Kumkum', 'New sari/cloth', 'Bangles', 'Coconut', 'Betel leaves & nuts', 'Camphor & Agarbatti'],
+    samagriByYou: ['Fruits and sweets for distribution', 'New clothes for the mother', 'Seating arrangements for guests'],
     packages: [
       { name: 'Silver', price: '₹9,800', duration: '2–3 hrs', pandits: 1, highlights: ['Ganapathi Pooja', 'Punyahavachanam', 'Simantonnayana ritual', 'Navagraha Puja', 'Garbha Rakshana mantras', 'Aarti & Prasad'] },
       { name: 'Gold', price: '₹18,500', duration: '3–4 hrs', pandits: 2, highlights: ['All Silver items', 'Lakshmi Puja', 'Ayusha Homa', 'Fruit basket offering', 'Extended Ashirvadam'] },
@@ -312,8 +312,8 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
       'Navagraha blessings ensure favorable planetary influences throughout life',
       'Connects the child to ancestral food traditions and cultural identity',
     ],
-    SaamagriByUs: ['Kalasha', 'Flowers & Garlands', 'Turmeric & Kumkum', 'Coconut', 'Banana', 'Camphor', 'Silver/brass plate for baby', 'New cloth for baby'],
-    SaamagriByYou: ['Cooked rice', 'Ghee', 'Honey', 'Curd', 'Gold ring/ornament for gold water', 'New clothes for baby', 'Family members for blessings'],
+    samagriByUs: ['Kalasha', 'Flowers & Garlands', 'Turmeric & Kumkum', 'Coconut', 'Banana', 'Camphor', 'Silver/brass plate for baby', 'New cloth for baby'],
+    samagriByYou: ['Cooked rice', 'Ghee', 'Honey', 'Curd', 'Gold ring/ornament for gold water', 'New clothes for baby', 'Family members for blessings'],
     packages: [
       { name: 'Silver', price: '₹4,000', duration: '1–1.5 hrs', pandits: 1, highlights: ['Ganapathi Pooja', 'Punyahavachanam', 'Annaprasana ritual with mantras', 'Navagraha Puja', 'First food ceremony', 'Family blessing'] },
       { name: 'Gold', price: '₹9,500', duration: '2 hrs', pandits: 1, highlights: ['All Silver items', 'Ayusha Homa', 'Nakshatra Shanti', 'Extended Ashirvadam', 'Janam Kundali consultation'] },
@@ -342,8 +342,8 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
       'Heals family issues, marriage delays and health problems caused by Pitru Dosha',
       'Fulfills the sacred duty (Runa) owed to one\'s ancestors',
     ],
-    SaamagriByUs: ['Til (sesame seeds)', 'Darbha grass', 'Rice flour for Pinda', 'Flowers', 'Kalasha', 'Banana leaves', 'Honey & Ghee', 'Vastra for Brahmin'],
-    SaamagriByYou: ['Cooked food for Brahmin Bhoj', 'Dakshina (cash for Brahmin)', 'Water containers for Tarpana', 'Names and death dates of ancestors'],
+    samagriByUs: ['Til (sesame seeds)', 'Darbha grass', 'Rice flour for Pinda', 'Flowers', 'Kalasha', 'Banana leaves', 'Honey & Ghee', 'Vastra for Brahmin'],
+    samagriByYou: ['Cooked food for Brahmin Bhoj', 'Dakshina (cash for Brahmin)', 'Water containers for Tarpana', 'Names and death dates of ancestors'],
     packages: [
       { name: 'Silver', price: '₹2,500', duration: '2 hrs', pandits: 1, highlights: ['Sankalpam', 'Tarpana (3 generations)', 'Pinda Pradana', 'Pitru Stotra chanting', 'Saamagri included if opted'] },
       { name: 'Gold', price: '₹8,500', duration: '3 hrs', pandits: 1, highlights: ['All Silver items', 'Narayana Bali (Preta Shanti)', 'Brahmin Bhoj (1 Brahmin)', 'Pitru Dosha Nivarana mantra'] },
@@ -372,8 +372,8 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
       'Improves health, wealth, relationships and career simultaneously',
       'Provides comprehensive astrological protection for the entire family',
     ],
-    SaamagriByUs: ['9-color cloths (Navagraha Vastra)', 'Navadhanya (9 grains)', 'Specific flowers for each graha', 'Homa Saamagri', 'Ghee & Til', 'Samidha', 'Navagraha Yantra (Platinum)'],
-    SaamagriByYou: ['Mats & seating', 'Water containers', 'Plates for Prasad'],
+    samagriByUs: ['9-color cloths (Navagraha Vastra)', 'Navadhanya (9 grains)', 'Specific flowers for each graha', 'Homa Saamagri', 'Ghee & Til', 'Samidha', 'Navagraha Yantra (Platinum)'],
+    samagriByYou: ['Mats & seating', 'Water containers', 'Plates for Prasad'],
     packages: [
       { name: 'Silver', price: '₹9,000', duration: '3–4 hrs', pandits: 2, highlights: ['Ganapathi Pooja', 'Navagraha Pooja (9 deities)', 'Navagraha Homa (108 ahutis each)', 'Navagraha Shanti Japa', 'Navagraha Vastra offering'] },
       { name: 'Gold', price: '₹22,000', duration: '4–5 hrs', pandits: 2, highlights: ['All Silver items', '1008 ahutis per graha', 'Navagraha Shanti Mantra Japa (10,000 each)', 'Navagraha Yantra Puja', 'Extended homa'] },
@@ -402,8 +402,8 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
       'Protects from negative forces and clears path to prosperity',
       'Creates auspicious beginnings — ideal before major life ceremonies',
     ],
-    SaamagriByUs: ['Ganesha idol', '21 types of leaves (Patri)', '21 Modaks', 'Durva grass', 'Red Hibiscus flowers', 'Ghee', 'Samidha', 'Homa Saamagri', 'Coconut'],
-    SaamagriByYou: ['Mats & seating', 'Plates for Prasad', 'Additional Modaks for distribution (optional)'],
+    samagriByUs: ['Ganesha idol', '21 types of leaves (Patri)', '21 Modaks', 'Durva grass', 'Red Hibiscus flowers', 'Ghee', 'Samidha', 'Homa Saamagri', 'Coconut'],
+    samagriByYou: ['Mats & seating', 'Plates for Prasad', 'Additional Modaks for distribution (optional)'],
     packages: [
       { name: 'Silver', price: '₹8,300', duration: '2–3 hrs', pandits: 1, highlights: ['Ganapathi Dhyana & Sankalpam', '21-Patri Archana', 'Gana Homa (1,008 ahutis)', 'Durva Archana', 'Modak Prasad', 'Saamagri included if opted'] },
       { name: 'Gold', price: '₹28,000', duration: '3–4 hrs', pandits: 2, highlights: ['All Silver items', '1,008 Modak offering', 'Ganapathi Sahasranama Archana', 'Extended Homa (10,000 ahutis)', 'Shri Ganesh Stotra chanting'] },
@@ -414,7 +414,7 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
     ],
   },
 
-  'lakshmi-kubera-homa': {
+  'lakshmi-kubera': {
     duration: '3–4 hours',
     bestTime: 'Fridays, Diwali, Akshaya Tritiya, or any auspicious Friday',
     procedure: `Lakshmi Kubera Homa begins with Ganapathi Pooja and Sankalpam. Lakshmi (Goddess of Wealth) and Kubera (Lord of Wealth) are invoked together. Sri Sukta mantras and Kubera mantras are chanted alternately. Lotus flowers, gold coins, yellow flowers and saffron are key offerings. Kubera Yantra is worshipped. Concludes with Lakshmi Aarti and distribution of Kumkum Prasad.`,
@@ -432,8 +432,8 @@ export const PUJA_DETAILS: Record<string, PujaDetail> = {
       'Invokes Goddess Lakshmi\'s blessings for all forms of prosperity',
       'Establishes Kubera\'s protection over home and business finances',
     ],
-    SaamagriByUs: ['Lakshmi & Kubera photos/idols', 'Lotus flowers', 'Yellow & red flowers', 'Gold coins (symbolic)', 'Kumkum', 'Turmeric', 'Ghee', 'Homa Saamagri', 'Sri Yantra', 'Kubera Yantra'],
-    SaamagriByYou: ['Plates & vessels', 'Mats', 'Water containers'],
+    samagriByUs: ['Lakshmi & Kubera photos/idols', 'Lotus flowers', 'Yellow & red flowers', 'Gold coins (symbolic)', 'Kumkum', 'Turmeric', 'Ghee', 'Homa Saamagri', 'Sri Yantra', 'Kubera Yantra'],
+    samagriByYou: ['Plates & vessels', 'Mats', 'Water containers'],
     packages: [
       { name: 'Silver', price: '₹9,500', duration: '3 hrs', pandits: 1, highlights: ['Ganapathi Pooja', 'Lakshmi & Kubera Puja', 'Sri Sukta Japa', 'Kubera Mantra Japa (1,008)', 'Lakshmi Kubera Homa', 'Kumkum Prasad'] },
       { name: 'Gold', price: '₹35,000', duration: '3–4 hrs', pandits: 2, highlights: ['All Silver items', 'Sri Sukta Homa', 'Kubera Ashtottara Archana', 'Extended Japa (11,000)', 'Yantra Puja & installation'] },

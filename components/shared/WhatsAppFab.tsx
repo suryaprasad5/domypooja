@@ -1,7 +1,7 @@
 export default function WhatsAppFab() {
   return (
     <a
-      href="https://wa.me/919036050108"
+      href="https://wa.me/919742155777"
       target="_blank"
       rel="noreferrer"
       style={{

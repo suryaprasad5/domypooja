@@ -2,6 +2,7 @@
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { SERVICES, CATEGORIES, SAMSKARAS, PujaCategory } from '@/data/services'
+import AddToCartButton from '@/components/cart/AddToCartButton'
 
 const BADGE_COLORS: Record<string, string> = {
   popular:'#F97316', festival:'#F97316', homa:'#B45309',
@@ -43,8 +44,6 @@ export default function PujaServicesPage() {
     return g
   }, [q, mode])
 
-  const book = (name: string) =>
-    window.open(`https://wa.me/919036050108?text=${encodeURIComponent(`I would like to book: ${name}\n\nPlease share pricing and availability.`)}`, '_blank')
 
   return (
     <>
@@ -145,7 +144,7 @@ export default function PujaServicesPage() {
 
             <div style={{ display:'flex',flexDirection:'column',gap:10 }}>
               <a href="/contact" style={{ display:'block',padding:'11px',borderRadius:'999px',background:'linear-gradient(135deg,var(--saffron),#C2540A)',color:'white',fontWeight:600,fontSize:'0.84rem',textAlign:'center',textDecoration:'none' }}>📞 Talk to Expert</a>
-              <a href="https://wa.me/919036050108" target="_blank" rel="noreferrer" style={{ display:'block',padding:'11px',borderRadius:'999px',border:'2px solid #0F766E',color:'#0F766E',fontWeight:600,fontSize:'0.84rem',textAlign:'center',textDecoration:'none' }}>💬 WhatsApp</a>
+              <a href="https://wa.me/919742155777" target="_blank" rel="noreferrer" style={{ display:'block',padding:'11px',borderRadius:'999px',border:'2px solid #0F766E',color:'#0F766E',fontWeight:600,fontSize:'0.84rem',textAlign:'center',textDecoration:'none' }}>💬 WhatsApp</a>
             </div>
           </aside>
 
@@ -190,11 +189,11 @@ export default function PujaServicesPage() {
                       <div style={{ fontSize:'0.75rem',color:'var(--text-faint)' }}>{items.length} services · {CATEGORIES[catKey as PujaCategory].description}</div>
                     </div>
                   </div>
-                  <ServiceGrid items={items} badgeColors={BADGE_COLORS} badgeLabels={BADGE_LABELS} onBook={book} />
+                  <ServiceGrid items={items} badgeColors={BADGE_COLORS} badgeLabels={BADGE_LABELS} />
                 </div>
               ))
             ) : (
-              <ServiceGrid items={filtered} badgeColors={BADGE_COLORS} badgeLabels={BADGE_LABELS} onBook={book} />
+              <ServiceGrid items={filtered} badgeColors={BADGE_COLORS} badgeLabels={BADGE_LABELS} />
             )}
 
             {filtered.length === 0 && (
@@ -212,8 +211,8 @@ export default function PujaServicesPage() {
         <h2 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(1.9rem,3.5vw,3rem)',color:'white',marginBottom:12 }}>Need Help Choosing?</h2>
         <p style={{ color:'rgba(255,255,255,0.6)',maxWidth:520,margin:'0 auto 36px',lineHeight:1.7 }}>Not sure which pooja to book? Our team will guide you and provide a customised quote — including Saamagri and Alankara if needed.</p>
         <div style={{ display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap' }}>
-          <a href="https://wa.me/919036050108" target="_blank" rel="noreferrer" style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'16px 38px',borderRadius:'999px',background:'white',color:'var(--saffron)',fontWeight:600,fontSize:'1rem',textDecoration:'none' }}>💬 WhatsApp Us</a>
-          <a href="tel:+918061160400" style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'16px 38px',borderRadius:'999px',background:'rgba(255,255,255,0.15)',color:'white',border:'2px solid rgba(255,255,255,0.4)',fontWeight:600,fontSize:'1rem',textDecoration:'none' }}>📞 080-6116-0400</a>
+          <a href="https://wa.me/919742155777" target="_blank" rel="noreferrer" style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'16px 38px',borderRadius:'999px',background:'white',color:'var(--saffron)',fontWeight:600,fontSize:'1rem',textDecoration:'none' }}>💬 WhatsApp Us</a>
+          <a href="tel:+919742155777" style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'16px 38px',borderRadius:'999px',background:'rgba(255,255,255,0.15)',color:'white',border:'2px solid rgba(255,255,255,0.4)',fontWeight:600,fontSize:'1rem',textDecoration:'none' }}>📞 +91 97421 55777</a>
         </div>
       </section>
       <style>{`@media(max-width:1000px){.svc-layout{grid-template-columns:1fr!important}aside{position:static!important;max-height:none!important}}`}</style>
@@ -221,8 +220,8 @@ export default function PujaServicesPage() {
   )
 }
 
-function ServiceGrid({ items, badgeColors, badgeLabels, onBook }: {
-  items: typeof SERVICES; badgeColors: Record<string,string>; badgeLabels: Record<string,string>; onBook:(n:string)=>void
+function ServiceGrid({ items, badgeColors, badgeLabels }: {
+  items: typeof SERVICES; badgeColors: Record<string,string>; badgeLabels: Record<string,string>
 }) {
   return (
     <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(190px,1fr))',gap:16 }}>
@@ -250,9 +249,7 @@ function ServiceGrid({ items, badgeColors, badgeLabels, onBook }: {
               <Link href={`/puja/${s.id}`}
                 style={{ flex:1,padding:'6px 8px',borderRadius:8,border:'1.5px solid var(--border)',color:'var(--text-muted)',background:'var(--ivory-warm)',fontFamily:'var(--font-body)',fontSize:'0.72rem',fontWeight:600,textAlign:'center',textDecoration:'none',transition:'all 0.18s' }}
                 className="details-btn">Details</Link>
-              <button onClick={() => onBook(s.name)}
-                style={{ flex:1,padding:'6px 8px',borderRadius:8,border:'1.5px solid var(--saffron)',color:'var(--saffron)',background:'transparent',fontFamily:'var(--font-body)',fontSize:'0.72rem',fontWeight:700,cursor:'pointer',transition:'all 0.18s' }}
-                className="book-btn">Book</button>
+              <AddToCartButton serviceId={s.id} />
             </div>
           </div>
         </div>
@@ -260,7 +257,6 @@ function ServiceGrid({ items, badgeColors, badgeLabels, onBook }: {
       <style>{`
         .pc-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(249,115,22,0.14);border-color:var(--border-warm)!important}
         .details-btn:hover{background:var(--ivory-mid)!important;border-color:var(--text-muted)!important;color:var(--text-dark)!important}
-        .book-btn:hover{background:var(--saffron)!important;color:white!important}
       `}</style>
     </div>
   )

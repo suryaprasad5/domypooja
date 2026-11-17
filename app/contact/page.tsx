@@ -5,8 +5,8 @@ import Link from 'next/link'
 const FAQS = [
   { q:'How quickly can I book a Purohit/Pandit?', a:'For most cities, we can arrange a Purohit/Pandit within 24–48 hours. For popular dates and major festivals, we recommend booking 7–10 days in advance.' },
   { q:'Is the puja samagri included in the price?', a:'Yes! All our packages include complete puja samagri delivered to your home before the ceremony. You need not source or arrange anything.' },
-  { q:'Can I request a Purohit/Pandit from my community?', a:'Absolutely. We have Purohits/Purohit/Pandits from virtually all Hindu traditions — North Indian, South Indian, Bengali, Gujarati, Marathi and more. Specify your preference when booking.' },
-  { q:'How do I register as a Purohit/Pandit on DoMyPooja?', a:'Fill out the contact form, select "Purohit/Purohit/Pandit Registration," and our team will contact you within 24 hours with the process and verification requirements.' },
+  { q:'Can I request a Purohit/Pandit from my community?', a:'Absolutely. We have Purohits/Pandits from virtually all Hindu traditions — North Indian, South Indian, Bengali, Gujarati, Marathi and more. Specify your preference when booking.' },
+  { q:'How do I register as a Purohit/Pandit on DoMyPooja?', a:'Fill out the contact form, select "Purohit/Pandit Registration," and our team will contact you within 24 hours with the process and verification requirements.' },
   { q:'What is the refund policy if I cancel?', a:'We offer a 100% refund for cancellations made 48+ hours before the ceremony. For later cancellations, we provide free rescheduling.' },
 ]
 
@@ -17,7 +17,7 @@ export default function ContactPage() {
   const submit = () => {
     if (!form.name || !form.phone) { alert('Please fill in your name and phone number.'); return }
     const msg = `New enquiry from DoMyPooja website:\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\nService: ${form.service}\nCity: ${form.city}\nMessage: ${form.message}`
-    window.open(`https://wa.me/919036050108?text=${encodeURIComponent(msg)}`, '_blank')
+    window.open(`https://wa.me/919742155777?text=${encodeURIComponent(msg)}`, '_blank')
   }
 
   const inp: React.CSSProperties = {
@@ -74,7 +74,7 @@ export default function ContactPage() {
                   <label style={{ display:'block',fontSize:'0.78rem',fontWeight:700,color:'var(--text-faint)',textTransform:'uppercase',letterSpacing:'0.8px',marginBottom:7 }}>Puja / Service</label>
                   <select value={form.service} onChange={e=>setForm({...form,service:e.target.value})} style={{...inp,cursor:'pointer'}}>
                     <option value="">Select a service</option>
-                    {['Griha Pravesh Puja','Satyanarayan Puja','Maha Ganapati Homa','E-Puja Online','General Inquiry','Purohit/Purohit/Pandit Registration','Other'].map(s=><option key={s}>{s}</option>)}
+                    {['Griha Pravesh Puja','Satyanarayan Puja','Maha Ganapati Homa','E-Puja Online','General Inquiry','Purohit/Pandit Registration','Other'].map(s=><option key={s}>{s}</option>)}
                   </select>
                 </div>
                 <div>
@@ -105,8 +105,8 @@ export default function ContactPage() {
 
             <div style={{ display:'flex',flexDirection:'column',gap:16,marginBottom:40 }}>
               {[
-                { icon:'📞', label:'Phone',     val:'080-6116-0400',           href:'tel:+918061160400', sub:'Mon–Sun · 8 AM – 8 PM IST' },
-                { icon:'💬', label:'WhatsApp',  val:'+91 90360-50108',         href:'https://wa.me/919036050108', sub:'Instant support · 24/7' },
+                { icon:'📞', label:'Phone',     val:'+91 97421 55777',           href:'tel:+919742155777', sub:'Mon–Sun · 8 AM – 8 PM IST' },
+                { icon:'💬', label:'WhatsApp',  val:'+91 97421 55777',         href:'https://wa.me/919742155777', sub:'Instant support · 24/7' },
                 { icon:'✉️', label:'Email',      val:'namaste@domypooja.com',  href:'mailto:namaste@domypooja.com', sub:'Response within 4–6 hours' },
                 { icon:'📍', label:'Office',     val:'Bengaluru — 560076',      href:'#', sub:'Karnataka, India' },
               ].map(c => (

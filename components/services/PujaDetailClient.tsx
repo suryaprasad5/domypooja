@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { PujaService } from '@/data/services'
 import { PujaDetail } from '@/data/puja-details'
 import PujaBookingCard from './PujaBookingCard'
+import AddToCartButton from '@/components/cart/AddToCartButton'
 
 const TABS = ['Overview', 'Packages', 'Procedure', 'Samagri', 'FAQs']
 
@@ -115,7 +116,7 @@ export default function PujaDetailClient({
               <div>
                 <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: 'var(--text-dark)', marginBottom: 12 }}>About This Puja</h2>
                 <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', lineHeight: 1.8, marginBottom: 22 }}>
-                  {puja.description || `${puja.name} is a sacred Vedic ceremony performed with devotion and as per ancient scriptural injunctions. Our verified Purohits/Purohits/Purohits/Purohit/Pandits ensure the ceremony is conducted exactly as per your community and regional traditions, with all puja samagri arranged and delivered by DoMyPooja.`}
+                  {puja.description || `${puja.name} is a sacred Vedic ceremony performed with devotion and as per ancient scriptural injunctions. Our verified Purohits/Pandits ensure the ceremony is conducted exactly as per your community and regional traditions, with Saamagri (including Alankara/Decoration) arranged if you opt for it.`}
                 </p>
 
                 {detail?.keyInsights && (
@@ -163,7 +164,7 @@ export default function PujaDetailClient({
                 <div style={{ background: 'linear-gradient(135deg,rgba(15,118,110,0.06),rgba(249,115,22,0.04))', border: '1px solid rgba(15,118,110,0.15)', borderRadius: 14, padding: '20px 22px' }}>
                   <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-faint)', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: 12 }}>Everything arranged by DoMyPooja</div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-                    {['Verified & experienced Purohit/Purohit/Pandit', 'Saamagri arranged if opted (incl. Alankara)', 'Advance booking confirmation & reminder', 'Ceremony per your community traditions', 'Prasad distribution guidance', '24/7 support via phone & in person'].map(item => (
+                    {['Verified & experienced Purohit/Pandit', 'Saamagri arranged if opted (incl. Alankara)', 'Advance booking confirmation & reminder', 'Ceremony per your community traditions', 'Prasad distribution guidance', '24/7 support via phone & in person'].map(item => (
                       <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.82rem', color: 'var(--text-body)' }}>
                         <span style={{ color: '#0F766E', fontWeight: 700, flexShrink: 0 }}>✓</span>{item}
                       </div>
@@ -219,24 +220,14 @@ export default function PujaDetailClient({
                           ))}
                         </div>
                       </div>
-                      <button
-                        onClick={() => window.open(`https://wa.me/919036050108?text=${encodeURIComponent(`I want to book ${puja.name} — ${pkg.name} Package (${pkg.price})`)}`, '_blank')}
-                        style={{
-                          marginTop: 20, width: '100%', padding: '12px',
-                          borderRadius: '999px', border: 'none', cursor: 'pointer',
-                          fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '0.9rem',
-                          background: i === 1 ? 'linear-gradient(135deg,var(--saffron),#C2540A)' : 'white',
-                          color: i === 1 ? 'white' : 'var(--saffron)',
-                          border: i === 1 ? 'none' : '2px solid var(--saffron)',
-                          boxShadow: i === 1 ? '0 6px 20px rgba(249,115,22,0.3)' : 'none',
-                        }}>
-                        Book {pkg.name} Package — {pkg.price}
-                      </button>
+                      <div style={{ marginTop: 20 }}>
+                        <AddToCartButton serviceId={puja.id} packageName={pkg.name} variant={i === 1 ? 'primary' : 'outline'} label={`🛒 Add ${pkg.name} package to cart`} />
+                      </div>
                     </div>
                   ))}
                 </div>
                 <div style={{ background: 'var(--ivory-warm)', border: '1px solid var(--border)', borderRadius: 12, padding: '14px 18px', marginTop: 20, fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                  💡 <strong style={{ color: 'var(--text-dark)' }}>Not sure which package?</strong> WhatsApp us at <a href="https://wa.me/919036050108" style={{ color: 'var(--saffron)' }}>+91 90360-50108</a> — our team will recommend the best package for your occasion and budget.
+                  💡 <strong style={{ color: 'var(--text-dark)' }}>Not sure which package?</strong> WhatsApp us at <a href="https://wa.me/919742155777" style={{ color: 'var(--saffron)' }}>+91 97421 55777</a> — our team will recommend the best package for your occasion and budget.
                 </div>
               </div>
             )}
@@ -308,7 +299,7 @@ export default function PujaDetailClient({
                   {[
                     ...(detail?.faq || []),
                     { q: 'How far in advance should I book?', a: 'We recommend booking at least 7–10 days in advance to find an auspicious Muhurta and arrange all samagri. For popular dates and festivals, book 3–4 weeks ahead.' },
-                    { q: 'Can I choose the language of the Purohit/Pandit?', a: 'Absolutely. We offer Purohits/Purohit/Pandits in Kannada, Hindi, Telugu, Tamil, Bengali, Marathi, Malayalam and Gujarati. Specify your preference when booking.' },
+                    { q: 'Can I choose the language of the Purohit/Pandit?', a: 'Absolutely. We offer Purohits/Pandits in Kannada, Hindi, Telugu, Tamil, Bengali, Marathi, Malayalam and Gujarati. Specify your preference when booking.' },
                     { q: 'Is samagri included in the price?', a: 'Yes! All packages include complete puja samagri delivered to your home. You don\'t need to source anything separately.' },
                     { q: 'What is the cancellation and refund policy?', a: 'We offer 100% refund for cancellations made 48+ hours before the ceremony. For later cancellations, we offer free rescheduling.' },
                   ].map((f, i) => (

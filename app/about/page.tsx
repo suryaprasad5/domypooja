@@ -10,10 +10,10 @@ const VALUES = [
 ]
 const TIMELINE = [
   { year:'2019', title:'The Problem is Identified',    desc:'Our founders struggle to arrange a Griha Pravesh puja — sparking the idea for DoMyPooja.' },
-  { year:'2020', title:'DoMyPooja is Founded',         desc:'We launch in Bangalore with 50 verified Purohits/Purohit/Pandits. Our first 100 bookings teach us what devotees truly need.', teal:true },
+  { year:'2020', title:'DoMyPooja is Founded',         desc:'We launch in Bangalore with 50 verified Purohits/Pandits. Our first 100 bookings teach us what devotees truly need.', teal:true },
   { year:'2021', title:'E-Puja Launched During COVID', desc:'When lockdowns prevented in-person ceremonies, we pioneered live-streamed E-Puja via video call.' },
-  { year:'2022–23', title:'Bengaluru-based Expansion',       desc:'We expand to 15 cities, onboard 800+ Purohits/Purohit/Pandits, and cross 25,000 ceremonies.', teal:true },
-  { year:'2024–26', title:'Scaling to Bengaluru Cities',     desc:'Today we serve Bengaluru cities with Verified Purohits/Purohit/Pandits and 118+ services — 85,000+ ceremonies performed.' },
+  { year:'2022–23', title:'Bengaluru-based Expansion',       desc:'We expand to 15 cities, onboard 800+ Purohits/Pandits, and cross 25,000 ceremonies.', teal:true },
+  { year:'2024–26', title:'Scaling to Bengaluru Cities',     desc:'Today we serve Bengaluru cities with Verified Purohits/Pandits and 118+ services — 85,000+ ceremonies performed.' },
 ]
 const TEAM = [
   { i:'A', name:'Arjun Sharma',          role:'CEO & Co-Founder',         bio:'IIT Bombay alumnus with 12 years in tech. Passionate about preserving Indian cultural traditions.', g:'linear-gradient(135deg,var(--saffron),#C2540A)' },
@@ -44,7 +44,7 @@ export default function AboutPage() {
             <h2 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(1.9rem,3.5vw,3rem)',fontWeight:700,color:'var(--text-dark)',marginBottom:8 }}>Making Sacred Rituals <em style={{fontStyle:'italic',color:'var(--saffron)'}}>Accessible to All</em></h2>
             <div style={{ width:60,height:3,background:'linear-gradient(90deg,var(--saffron),#F59E0B)',borderRadius:2,margin:'0 0 24px' }} />
             <p style={{ fontSize:'1rem',color:'var(--text-body)',lineHeight:1.8,marginBottom:20 }}>DoMyPooja was founded to make authentic Hindu Vedic ceremonies accessible to every devotee — regardless of where they live, what language they speak, or how much time they have.</p>
-            <p style={{ fontSize:'1rem',color:'var(--text-body)',lineHeight:1.8,marginBottom:36 }}>Today we serve Bengaluru cities with Verified verified Purohits/Purohit/Pandits speaking Kannada, Telugu, Hindi & English, having facilitated more than 85,000 sacred ceremonies.</p>
+            <p style={{ fontSize:'1rem',color:'var(--text-body)',lineHeight:1.8,marginBottom:36 }}>Today we serve Bengaluru cities with Verified verified Purohits/Pandits speaking Kannada, Telugu, Hindi & English, having facilitated more than 85,000 sacred ceremonies.</p>
             <Link href="/puja-services" style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'16px 38px',borderRadius:'999px',background:'linear-gradient(135deg,var(--saffron),#C2540A)',color:'white',fontWeight:600,fontSize:'1rem',textDecoration:'none',boxShadow:'0 6px 22px rgba(249,115,22,0.35)' }}>Explore Our Services →</Link>
           </div>
           <div style={{ display:'flex',alignItems:'center',justifyContent:'center' }}>
@@ -63,7 +63,7 @@ export default function AboutPage() {
 
       <section style={{ background:'var(--ivory-warm)',padding:'60px 8%' }}>
         <div style={{ display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:24 }} className="impact-g">
-          {[['85,000+','Ceremonies performed'],['Verified','Verified Purohits/Purohit/Pandits'],['Bengaluru','Cities served'],['118+','Unique services']].map(([n,l]) => (
+          {[['85,000+','Ceremonies performed'],['Verified','Verified Purohits/Pandits'],['Bengaluru','Cities served'],['118+','Unique services']].map(([n,l]) => (
             <div key={l} style={{ background:'white',borderRadius:18,padding:'32px 24px',textAlign:'center',border:'1px solid var(--border)' }}>
               <div style={{ fontFamily:'var(--font-display)',fontSize:'2.8rem',fontWeight:700,color:'var(--saffron)',lineHeight:1,marginBottom:8 }}>{n}</div>
               <div style={{ fontSize:'0.85rem',color:'var(--text-muted)' }}>{l}</div>

@@ -13,7 +13,7 @@ export default function FeaturedPujas() {
         <div style={{ display:'inline-flex',alignItems:'center',gap:8,fontSize:'0.72rem',fontWeight:700,letterSpacing:'2.5px',textTransform:'uppercase',color:'var(--saffron)',marginBottom:14 }}>✦ Most Booked ✦</div>
         <h2 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(1.9rem,3.5vw,3rem)',fontWeight:700,color:'var(--text-dark)' }}>Featured Puja Services</h2>
         <div style={{ width:60,height:3,background:'linear-gradient(90deg,var(--saffron),#F59E0B)',borderRadius:2,margin:'20px auto' }} />
-        <p style={{ fontSize:'1.05rem',color:'var(--text-muted)',maxWidth:540,margin:'0 auto' }}>Authentic Vedic ceremonies performed by verified Purohits/Purohit/Pandits. Saamagri arranged if opted (incl. Alankara/Decoration).</p>
+        <p style={{ fontSize:'1.05rem',color:'var(--text-muted)',maxWidth:540,margin:'0 auto' }}>Authentic Vedic ceremonies performed by verified Purohits/Pandits. Saamagri arranged if opted (incl. Alankara/Decoration).</p>
       </div>
       <div style={{ display:'flex',flexWrap:'wrap',gap:10,justifyContent:'center',marginBottom:52 }}>
         {TABS.map((t,i) => (
