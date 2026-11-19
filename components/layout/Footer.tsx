@@ -1,4 +1,7 @@
 import Link from 'next/link'
+import SanskritQuote from '@/components/shared/SanskritQuote'
+import { Q } from '@/data/quotes'
+import { MOTTO } from '@/lib/config'
 
 const popularPujas = [
   { href:'/puja/gruhapravesha',       label:'Gruhapravesha Pooja' },
@@ -33,9 +36,11 @@ export default function Footer() {
     <footer style={{ background:'var(--charcoal)', color:'rgba(255,255,255,0.6)', padding:'80px 8% 32px' }}>
       <div style={{ display:'grid', gridTemplateColumns:'2.2fr 1fr 1fr 1fr', gap:56, marginBottom:56 }} className="footer-grid">
         <div>
-          <div style={{ fontFamily:'var(--font-display)', fontSize:'1.7rem', fontWeight:700, color:'white', marginBottom:14 }}>
+          <div style={{ fontFamily:'var(--font-display)', fontSize:'1.7rem', fontWeight:700, color:'white', marginBottom:4 }}>
             Do<span style={{ color:'var(--saffron)' }}>My</span>Pooja
           </div>
+          <div lang="sa" title={MOTTO.en} style={{ fontFamily:'var(--font-devan)', fontSize:'0.95rem', color:'#FDBA74' }}>{MOTTO.sa}</div>
+          <div style={{ fontSize:'0.72rem', color:'rgba(255,255,255,0.45)', marginBottom:14 }}>{MOTTO.roman} — {MOTTO.en}</div>
           <p style={{ fontSize:'0.85rem', lineHeight:1.75, marginBottom:16 }}>
             Bengaluru&apos;s trusted platform for sacred, hassle-free Pooja services. Verified Purohits/Pandits · Saamagri & Alankara arranged on request · Shodasha Samskaras, Homas & General Poojas.
           </p>
@@ -88,6 +93,10 @@ export default function Footer() {
             ))}
           </div>
         </div>
+      </div>
+
+      <div style={{ textAlign:'center', padding:'8px 0 30px' }}>
+        <SanskritQuote quote={Q.purnam} variant="dark" compact />
       </div>
 
       <div style={{ borderTop:'1px solid rgba(255,255,255,0.08)', paddingTop:28, display:'flex', alignItems:'center', justifyContent:'space-between', fontSize:'0.78rem', flexWrap:'wrap', gap:14 }}>

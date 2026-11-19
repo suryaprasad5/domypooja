@@ -10,6 +10,8 @@ import Testimonials from '@/components/home/Testimonials'
 import BlogPreview from '@/components/home/BlogPreview'
 import PanditCta from '@/components/home/PanditCta'
 import RevealOnScroll from '@/components/shared/RevealOnScroll'
+import { ShlokaBand } from '@/components/shared/SanskritQuote'
+import { Q } from '@/data/quotes'
 
 export default function HomePage() {
   return (
@@ -17,12 +19,15 @@ export default function HomePage() {
       <Hero />
       <StatsBar />
       <RevealOnScroll><ServiceTypes /></RevealOnScroll>
+      <ShlokaBand quote={Q.satyam} />
       <RevealOnScroll><FeaturedPujas /></RevealOnScroll>
       <HowItWorks />
       <RevealOnScroll><Cities /></RevealOnScroll>
       <RevealOnScroll><Advantage /></RevealOnScroll>
+      <ShlokaBand quote={Q.jyoti} dark />
       <RevealOnScroll><Events /></RevealOnScroll>
       <RevealOnScroll><Testimonials /></RevealOnScroll>
+      <ShlokaBand quote={Q.purnam} />
       <RevealOnScroll><BlogPreview /></RevealOnScroll>
       <PanditCta />
     </>

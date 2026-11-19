@@ -5,6 +5,8 @@ import { PujaService } from '@/data/services'
 import { PujaDetail } from '@/data/puja-details'
 import PujaBookingCard from './PujaBookingCard'
 import AddToCartButton from '@/components/cart/AddToCartButton'
+import SanskritQuote from '@/components/shared/SanskritQuote'
+import { CATEGORY_QUOTES } from '@/data/quotes'
 
 const TABS = ['Overview', 'Packages', 'Procedure', 'Samagri', 'FAQs']
 
@@ -65,6 +67,7 @@ export default function PujaDetailClient({
             <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem,3vw,2.4rem)', fontWeight: 700, color: 'var(--text-dark)', marginBottom: 14, lineHeight: 1.2 }}>
               {puja.name}
             </h1>
+            {CATEGORY_QUOTES[puja.category] && <div style={{ marginBottom: 22 }}><SanskritQuote quote={CATEGORY_QUOTES[puja.category]} align="left" compact /></div>}
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 28 }}>
               {[

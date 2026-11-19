@@ -5,6 +5,12 @@ export const SITE = {
   email: 'namaste@domypooja.com',
 }
 
+export const MOTTO = {
+  sa: 'श्रद्धा मूलं धर्मस्य',
+  roman: 'Shraddha Moolam Dharmasya',
+  en: 'Faith is the root of Dharma',
+}
+
 export const LANGUAGES = ['Kannada', 'Telugu', 'Hindi', 'English'] as const
 
 export const TIME_SLOTS = [

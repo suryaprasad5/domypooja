@@ -1,6 +1,8 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import SanskritQuote from '@/components/shared/SanskritQuote'
+import { Q } from '@/data/quotes'
 
 const FAQS = [
   { q:'How quickly can I book a Purohit/Pandit?', a:'For most cities, we can arrange a Purohit/Pandit within 24–48 hours. For popular dates and major festivals, we recommend booking 7–10 days in advance.' },
@@ -39,6 +41,7 @@ export default function ContactPage() {
         <div style={{ display:'inline-flex',alignItems:'center',gap:8,fontSize:'0.72rem',fontWeight:700,letterSpacing:'2.5px',textTransform:'uppercase',color:'#FDE68A',marginBottom:14 }}>✦ We&apos;re Here to Help ✦</div>
         <h1 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(2.4rem,4.5vw,3.8rem)',fontWeight:700,color:'white',marginBottom:16 }}>Contact DoMyPooja</h1>
         <p style={{ fontSize:'1.05rem',color:'rgba(255,255,255,0.65)',maxWidth:540,margin:'0 auto 28px' }}>Have a question? Need help choosing a puja? Want to register as a Purohit/Pandit? We&apos;re available 7 days a week.</p>
+        <div style={{ margin:'0 auto 24px' }}><SanskritQuote quote={Q.saha} variant="dark" /></div>
         <div style={{ display:'flex',alignItems:'center',gap:8,justifyContent:'center',fontSize:'0.8rem',color:'rgba(255,255,255,0.5)' }}>
           <Link href="/" style={{ color:'rgba(255,255,255,0.6)',textDecoration:'none' }}>Home</Link><span>/</span><span>Contact Us</span>
         </div>

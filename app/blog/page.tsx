@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import SanskritQuote from '@/components/shared/SanskritQuote'
+import { Q } from '@/data/quotes'
 const POSTS = [
   { emoji:'🏠', bg:'linear-gradient(135deg,#FEF3C7,#FED7AA)', cat:'Ceremony Guide', date:'Mar 15, 2026', title:'Griha Pravesh Puja: A Complete Guide to Your Housewarming Ceremony', excerpt:'Everything you need to know — the significance, right muhurat, and how to prepare your home for this sacred ceremony.' },
   { emoji:'🌺', bg:'linear-gradient(135deg,#CCFBF1,rgba(15,118,110,0.2))', cat:'Festival', date:'Mar 10, 2026', title:'Significance of Satyanarayan Puja: Why Every Hindu Home Should Perform It', excerpt:'Satyanarayan Puja is one of the most beloved home ceremonies in India. Learn about its story, benefits and how to arrange it.' },
@@ -18,6 +20,7 @@ export default function BlogPage() {
         <div style={{ display:'inline-flex',alignItems:'center',gap:8,fontSize:'0.72rem',fontWeight:700,letterSpacing:'2.5px',textTransform:'uppercase',color:'#FDE68A',marginBottom:14 }}>✦ Vedic Knowledge Hub ✦</div>
         <h1 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(2.4rem,4.5vw,3.8rem)',fontWeight:700,color:'white',marginBottom:16 }}>DoMyPooja Blog</h1>
         <p style={{ fontSize:'1.05rem',color:'rgba(255,255,255,0.65)',maxWidth:540,margin:'0 auto 28px' }}>Guides, rituals, festival significance and Vedic wisdom — everything you need to deepen your spiritual journey.</p>
+        <div style={{ margin:'0 auto 24px' }}><SanskritQuote quote={Q.uttishthata} variant="dark" /></div>
         <div style={{ display:'flex',alignItems:'center',gap:8,justifyContent:'center',fontSize:'0.8rem',color:'rgba(255,255,255,0.5)' }}>
           <Link href="/" style={{ color:'rgba(255,255,255,0.6)',textDecoration:'none' }}>Home</Link><span>/</span><span>Blog</span>
         </div>

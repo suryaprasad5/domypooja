@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import SanskritQuote from '@/components/shared/SanskritQuote'
+import { Q } from '@/data/quotes'
 
 const VALUES = [
   { icon:'🕉️', name:'Authenticity',          desc:'Every ceremony is conducted exactly as per regional customs and scriptures — no shortcuts.' },
@@ -32,6 +34,7 @@ export default function AboutPage() {
         <div style={{ display:'inline-flex',alignItems:'center',gap:8,fontSize:'0.72rem',fontWeight:700,letterSpacing:'2.5px',textTransform:'uppercase',color:'#FDE68A',marginBottom:14 }}>✦ Our Story ✦</div>
         <h1 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(2.4rem,4.5vw,3.8rem)',fontWeight:700,color:'white',marginBottom:16 }}>About DoMyPooja</h1>
         <p style={{ fontSize:'1.05rem',color:'rgba(255,255,255,0.65)',maxWidth:540,margin:'0 auto 28px' }}>Born from a simple belief — that every Hindu deserves access to authentic, hassle-free sacred ceremonies — no matter where they are.</p>
+        <div style={{ margin:'0 auto 24px' }}><SanskritQuote quote={Q.satyameva} variant="dark" /></div>
         <div style={{ display:'flex',alignItems:'center',gap:8,justifyContent:'center',fontSize:'0.8rem',color:'rgba(255,255,255,0.5)' }}>
           <Link href="/" style={{ color:'rgba(255,255,255,0.6)',textDecoration:'none' }}>Home</Link><span>/</span><span>About Us</span>
         </div>

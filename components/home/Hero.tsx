@@ -58,12 +58,12 @@ export default function Hero() {
         <div style={{ position:'absolute',inset:0,pointerEvents:'none',
           background:'radial-gradient(ellipse 120% 60% at 50% 0%, rgba(249,115,22,0.07) 0%, transparent 70%)',
         }} />
-        <div style={{ display:'flex', justifyContent:'center', padding:'16px 0 0', position:'relative', zIndex:2, overflow:'hidden' }}>
-          <div style={{ width:'88vw', height:'88vw', maxWidth:380, maxHeight:380, overflow:'hidden' }}>
-            <YagnaKunda />
+        <div style={{ display:'flex', justifyContent:'center', padding:'8px 0 0', position:'relative', zIndex:2 }}>
+          <div style={{ width:'min(86vw, 340px)', height:'min(86vw, 340px)' }}>
+            <YagnaKunda fill />
           </div>
         </div>
-        <div style={{ padding:'12px 6% 40px', position:'relative', zIndex:2 }}>
+        <div style={{ padding:'2px 6% 40px', position:'relative', zIndex:2 }}>
           <HeroBadge />
           <HeroHeading mobile />
           <HeroSub mobile />
@@ -163,42 +163,38 @@ function HeroSearch({ puja, city, setPuja, setCity, onBook, mobile }: {
     { name:'Kolkata', available:false },
     { name:'Ahmedabad', available:false },
   ]
+  // one fixed height for every control, so the row can never grow tall
+  const control: React.CSSProperties = {
+    flex: mobile ? '0 0 auto' : 1, minWidth: 0, height: 44, padding: '0 12px',
+    border: 'none', background: 'var(--ivory-warm)', borderRadius: 10,
+    fontFamily: 'var(--font-body)', fontSize: '0.85rem',
+    color: 'var(--text-body)', cursor: 'pointer', outline: 'none',
+  }
   return (
     <div style={{
-      background:'white', borderRadius:14, padding:6,
-      display:'flex', flexDirection: mobile ? 'column' : 'row', gap:6,
+      background:'white', borderRadius:14, padding:5,
+      display:'flex', flexDirection: mobile ? 'column' : 'row', alignItems: mobile ? 'stretch' : 'center', gap:5,
       boxShadow:'0 6px 30px rgba(0,0,0,0.09)',
       border:'1px solid var(--border-warm)',
-      maxWidth: mobile ? '100%' : 520,
+      maxWidth: mobile ? '100%' : 560,
       marginBottom: mobile ? 18 : 22,
     }}>
-      <select value={puja} onChange={e => setPuja(e.target.value)} style={{
-        flex:1, padding: mobile ? '12px 10px' : '9px 10px',
-        border:'none', background:'var(--ivory-warm)', borderRadius:10,
-        fontFamily:'var(--font-body)', fontSize:'0.85rem',
-        color:'var(--text-body)', cursor:'pointer', outline:'none',
-      }}>
+      <select aria-label="Select a pooja" value={puja} onChange={e => setPuja(e.target.value)} style={control}>
         <option value="">🙏 Select a Pooja</option>
         {PUJAS.map(p => <option key={p}>{p}</option>)}
       </select>
-      <select value={city} onChange={e => setCity(e.target.value)} style={{
-        flex:1, padding: mobile ? '12px 10px' : '9px 10px',
-        border:'none', background:'var(--ivory-warm)', borderRadius:10,
-        fontFamily:'var(--font-body)', fontSize:'0.85rem',
-        color:'var(--text-body)', cursor:'pointer', outline:'none',
-      }}>
+      <select aria-label="Select a city" value={city} onChange={e => setCity(e.target.value)} style={control}>
         <option value="">📍 Select City</option>
         {ALL_CITIES.map(c => (
-          <option key={c.name} value={c.available ? c.name : ''} disabled={!c.available}>
+          <option key={c.name} value={c.available ? c.name : `soon-${c.name}`} disabled={!c.available}>
             {c.available ? c.name : `${c.name} — Coming Soon`}
           </option>
         ))}
       </select>
       <button onClick={onBook} style={{
+        flex: mobile ? 'none' : '0 0 auto', height: 44, padding: '0 22px', whiteSpace: 'nowrap',
         background:'linear-gradient(135deg,var(--saffron),var(--saffron-deep))',
-        color:'white', border:'none',
-        padding: mobile ? '14px' : '10px 22px',
-        borderRadius:10, fontFamily:'var(--font-body)',
+        color:'white', border:'none', borderRadius:10, fontFamily:'var(--font-body)',
         fontSize:'0.9rem', fontWeight:700, cursor:'pointer',
         boxShadow:'0 4px 14px rgba(249,115,22,0.3)',
       }}>Book Now ✦</button>

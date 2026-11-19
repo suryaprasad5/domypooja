@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import SanskritQuote from '@/components/shared/SanskritQuote'
+import { Q } from '@/data/quotes'
 export default function PanditCta() {
   return (
     <section style={{ background:'linear-gradient(135deg,var(--saffron) 0%,var(--saffron-deep,#C2540A) 40%,#0D5C55 100%)',color:'white',textAlign:'center',padding:'90px 8%',position:'relative',overflow:'hidden' }}>
@@ -8,6 +10,7 @@ export default function PanditCta() {
       <div style={{ position:'relative' }}>
         <h2 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(1.9rem,3.5vw,3rem)',marginBottom:14 }}>Are You a Qualified Purohit/Pandit or Astrologer?</h2>
         <p style={{ fontSize:'1rem',opacity:0.8,maxWidth:520,margin:'0 auto 38px',lineHeight:1.7 }}>Join DoMyPooja — Bengaluru&apos;s growing spiritual services platform — and connect with families seeking authentic Vedic rituals.</p>
+        <div style={{ margin:'0 auto 34px' }}><SanskritQuote quote={Q.yasya} variant="white" compact /></div>
         <div style={{ display:'flex',gap:16,justifyContent:'center',flexWrap:'wrap' }}>
           <Link href="/contact" style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'16px 38px',borderRadius:'999px',background:'white',color:'var(--saffron)',fontWeight:600,fontSize:'1rem',textDecoration:'none',boxShadow:'0 6px 24px rgba(0,0,0,0.15)' }}>🙏 Register as Purohit/Pandit</Link>
           <Link href="/contact" style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'16px 38px',borderRadius:'999px',background:'rgba(255,255,255,0.15)',color:'white',border:'2px solid rgba(255,255,255,0.4)',fontWeight:600,fontSize:'1rem',textDecoration:'none' }}>📞 Contact Us</Link>

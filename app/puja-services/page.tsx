@@ -3,6 +3,8 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { SERVICES, CATEGORIES, SAMSKARAS, PujaCategory } from '@/data/services'
 import AddToCartButton from '@/components/cart/AddToCartButton'
+import SanskritQuote from '@/components/shared/SanskritQuote'
+import { Q } from '@/data/quotes'
 
 const BADGE_COLORS: Record<string, string> = {
   popular:'#F97316', festival:'#F97316', homa:'#B45309',
@@ -65,6 +67,7 @@ export default function PujaServicesPage() {
         <div style={{ background:'rgba(249,115,22,0.15)',border:'1px solid rgba(249,115,22,0.3)',borderRadius:12,padding:'12px 20px',maxWidth:580,margin:'0 auto 28px',fontSize:'0.83rem',color:'rgba(255,255,255,0.85)',lineHeight:1.6 }}>
           💡 <strong>Pricing Note:</strong> Prices shown are indicative ranges (e.g. ₹5,000 – ₹22,000). Exact pricing depends on Saamagri requirements, Alankara/Decoration and scale of ceremony. Contact us for a customised quote.
         </div>
+        <div style={{ margin:'0 auto 24px' }}><SanskritQuote quote={Q.agne} variant="dark" /></div>
         <div style={{ display:'flex',alignItems:'center',gap:8,justifyContent:'center',fontSize:'0.8rem',color:'rgba(255,255,255,0.5)' }}>
           <Link href="/" style={{ color:'rgba(255,255,255,0.6)',textDecoration:'none' }}>Home</Link><span>/</span><span>Puja Services</span>
         </div>

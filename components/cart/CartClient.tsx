@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { removeFromCart } from '@/lib/cart-client'
 import { LANGUAGES, TIME_SLOTS } from '@/lib/config'
 import { label, input, errorBox } from '@/components/auth/styles'
+import SanskritQuote from '@/components/shared/SanskritQuote'
+import { Q } from '@/data/quotes'
 
 interface Item { serviceId: string; serviceName: string; packageName: string | null; priceRange: string | null }
 interface Defaults { addressLine: string; area: string; pincode: string; language: string; firstTime: boolean }
@@ -88,7 +90,8 @@ export default function CartClient({ initialItems, defaults }: { initialItems: I
   return (
     <section style={wrap}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-        <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem,4vw,2.4rem)', fontWeight: 700, color: 'var(--text-dark)', marginBottom: 22 }}>My cart &amp; checkout</h1>
+        <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem,4vw,2.4rem)', fontWeight: 700, color: 'var(--text-dark)', marginBottom: 6 }}>My cart &amp; checkout</h1>
+        <div style={{ marginBottom: 22 }}><SanskritQuote quote={Q.shraddhaya} align="left" compact /></div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 420px', gap: 26, alignItems: 'start' }} className="cart-layout">
           <div style={card}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', marginBottom: 6 }}>Poojas ({items.length})</h2>

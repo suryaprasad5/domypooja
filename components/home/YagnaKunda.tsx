@@ -1,14 +1,15 @@
 'use client'
 import Image from 'next/image'
 
-export default function YagnaKunda() {
+/** fill = size to the parent box (used on mobile); default sizes itself from the viewport (desktop). */
+export default function YagnaKunda({ fill = false }: { fill?: boolean }) {
   return (
     <div style={{
       position: 'relative',
-      width:  'min(calc(100vh - 72px), 58vw)',
-      height: 'min(calc(100vh - 72px), 58vw)',
-      maxWidth: 680,
-      maxHeight: 680,
+      width:  fill ? '100%' : 'min(calc(100vh - 72px), 58vw)',
+      height: fill ? '100%' : 'min(calc(100vh - 72px), 58vw)',
+      maxWidth: fill ? 'none' : 680,
+      maxHeight: fill ? 'none' : 680,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',

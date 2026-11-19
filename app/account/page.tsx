@@ -10,6 +10,8 @@ import OrderCard from '@/components/account/OrderCard'
 import ProfileCard from '@/components/account/ProfileCard'
 import LogoutButton from '@/components/account/LogoutButton'
 import AddToCartButton from '@/components/cart/AddToCartButton'
+import SanskritQuote from '@/components/shared/SanskritQuote'
+import { Q } from '@/data/quotes'
 
 export const metadata = { title: 'My Account — DoMyPooja' }
 export const dynamic = 'force-dynamic'
@@ -48,6 +50,7 @@ export default async function AccountPage() {
             <div style={{ fontSize: '0.72rem', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#FDE68A', fontWeight: 700, marginBottom: 6 }}>✦ My Account ✦</div>
             <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem,4vw,2.6rem)', fontWeight: 700 }}>Namaste, {user.fullName.split(' ')[0]} 🙏</h1>
             <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9rem', marginTop: 4 }}>{user.email}</p>
+            <div style={{ marginTop: 12 }}><SanskritQuote quote={Q.anando} variant="dark" align="left" compact /></div>
           </div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             <Link href="/puja-services" style={{ padding: '10px 22px', borderRadius: 999, background: 'var(--saffron)', color: 'white', fontWeight: 700, fontSize: '0.86rem', textDecoration: 'none' }}>+ Book a Pooja</Link>
